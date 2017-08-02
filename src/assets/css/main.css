@@ -1,0 +1,90 @@
+/*-----------
+--VARIABLES--
+-----------*/
+:root {
+  /*Font*/
+  --sans: 'Avenir', Helvetica, Arial, sans-serif;
+  
+  --ink: #212B35; 
+  --ink-lightest: #919EAB;
+  --ink-light: #454F5B;
+
+  /*Colors*/
+  /*Brand Color*/
+  --brand: #43467F;
+  --brand-light: #B3B5CB;
+  --brand-dark: #1C2260;
+  --brand-darker: #00044C;
+  --brand-accent: #FFEA8A;
+
+  /*Indigo */
+  --indigo-lighter: #F4F5FA;
+  --indigo-light: #B3BCF5;
+  --indigo: #5C6AC4;
+  --indigo-dark: #202E78;
+  --indigo-darker: #000639;
+  --indigo-text: #3e4155;
+
+  /*Teal  (Helpful Info, Secondary Color, Secondary Graph)*/
+
+
+  /*Green (Success Tips)*/
+
+
+  /*Blue (Text Links)*/
+
+
+  /*Red (Errors, Critical Tips)*/
+
+
+  /*Purple (Graphing)*/
+
+
+  /*Greys (Shadows)*/
+  --grey: #DFE4E8;
+  --grey-lighter: #F9FAFB;
+  --grey-light: #F4F6F8;
+  --grey-dark: #C4CDD5;
+
+
+  /*Spacing*/
+  --spacing-unit: 30px;
+}
+
+
+/*RESETS*/
+body {
+}
+
+h1, h2, h3, h4, p, a {
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  font-size: 48px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+
+/*UTILITY*/
+.button {
+  color: var(--indigo-lighter);
+  background-color: var(--indigo);
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 10px 20px;
+  box-shadow: 2px 2px 5px var(--grey-dark);
+}
+
+.button:hover {
+  background-color: var(--indigo-dark);
+}
