@@ -11,7 +11,11 @@ export default new Router({
     {
       path: '/',
       component: Splash,
-      name: 'Splash'
+      name: 'Splash',
+      beforeEnter: (a, b, c) => {
+        console.log(store.state.auth.user)
+        c()
+      }
     },
     {
       path: '/login',
