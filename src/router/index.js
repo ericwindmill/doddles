@@ -20,7 +20,7 @@ export default new Router({
     {
       path: '/login',
       component: Auth,
-      name: Auth,
+      name: 'Auth',
       beforeEnter: (to, from, next) => {
         if (store.state.auth.loggedIn) {
           next(`/user/${store.state.auth.user.id}`)
@@ -32,7 +32,7 @@ export default new Router({
     {
       path: '/user/:id',
       component: UserDashboard,
-      name: UserDashboard,
+      name: 'user',
       beforeEnter: (to, from, next) => {
         if (store.state.auth.loggedIn) {
           next()

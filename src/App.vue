@@ -12,6 +12,7 @@ import TopNav from '@/components/navigation/TopNav'
 import AppFooter from '@/components/navigation/AppFooter'
 import {auth} from './firebase'
 import { mapGetters, mapMutations, mapActions } from 'vuex'
+
 export default {
   name: 'app',
   components: {
@@ -33,7 +34,7 @@ export default {
     auth.onAuthStateChanged(user => {
       if (user) {
         this.LOG_IN(user)
-        this.$router.push(`/user/DzuUoqhRVAdWSJ3BlYVdnq07mg32`)
+        this.$router.push(`/user/${this.showUser.id}`)
       } else {
         this.$router.push('/')
       }
