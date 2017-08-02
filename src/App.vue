@@ -10,11 +10,28 @@
 import Home from '@/components/Home'
 import TopNav from '@/components/navigation/TopNav'
 import AppFooter from '@/components/navigation/AppFooter'
+import {auth} from './firebase'
+import { mapGetters } from 'vuex'
 export default {
   name: 'app',
   components: {
     TopNav,
     AppFooter
+  },
+  computed: {
+    ...mapGetters([
+      'userLoggedIn',
+      'showUser'
+    ])
+  },
+  created() {
+    auth.onAuthStateChanged(user => {
+      if (user) {
+        this.$router.push(`/user/${this.showUser.id}`)
+      } else {
+        this.$router.push('/')
+      }
+    })
   }
 }
 </script>

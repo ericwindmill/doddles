@@ -1,6 +1,5 @@
 <template>
   <div class='Splash'>
-    <top-nav></top-nav>
     <h1> Hello from Splash </h1>
     <!--<p> number of clicks {{ stringCounter }} </p>
     <button @click='increment(100)'> + </button>

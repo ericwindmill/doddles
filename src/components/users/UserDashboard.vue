@@ -1,8 +1,9 @@
 <template>
-  <div class='AuthPage'>
-    <h1> Hello from Authentication </h1>
-    <h2> The user is: {{showUser.name}} </h2>
-    <button v-show='!userLoggedIn' @click='logIn'> Sign In With Google </button>
+  <div class='UserDashboard'>
+    <h1>Hello from User Dash</h1>
+    <h2> Welcome back. {{showUser.name}} </h2>
+    <h2> Ready to get your learn on? </h2>
+    <button v-show='userLoggedIn' @click='logOut'> Sign Out </button>
   </div>
 </template>
 
@@ -11,7 +12,7 @@ import { mapGetters, mapMutations, mapActions } from 'vuex'
 export default {
     methods: {
         ...mapActions([
-            'logIn'
+            'logOut'
         ])
     },
     computed: {
