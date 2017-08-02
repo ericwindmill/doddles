@@ -24,7 +24,7 @@ export default {
       'showUser'
     ])
   },
-  created() {
+  created () {
     auth.onAuthStateChanged(user => {
       if (user) {
         this.$router.push(`/user/${this.showUser.id}`)
