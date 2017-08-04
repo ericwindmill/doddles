@@ -33,6 +33,4 @@
   - Dynamically render navbar / card categories
 
 ### (v0.1)
-  - Conditionally render all log in / log out buttons. 
-  - Format the navigator a bit to make it easier to follow
   - Add the question part!

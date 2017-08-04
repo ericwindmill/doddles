@@ -21,7 +21,7 @@ import store from './store/store'
 Vue.config.productionTip = true
 Vue.component('icon', Icon)
 
-Vue.config.productionTip = true
+
 
 /* eslint-disable no-new */
 new Vue({

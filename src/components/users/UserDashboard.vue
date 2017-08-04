@@ -1,9 +1,8 @@
 <template>
   <div class='UserDashboard'>
-    <h1>Hello from User Dash</h1>
     <h2> Welcome back, {{showUser.name}} </h2>
     <h2> Ready to get your learn on? </h2>
-    <button v-show='userLoggedIn' @click='logOut'> Sign Out </button>
+    <button class='button' v-show='userLoggedIn' @click='logOut'> Sign Out </button>
   </div>
 </template>
 

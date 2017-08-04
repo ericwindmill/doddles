@@ -3,6 +3,8 @@ import Router from 'vue-router'
 import store from '../store/store'
 import Splash from '@/components/Splash'
 import Auth from '@/components/users/Auth'
+import Home from '@/components/Home'
+import QuestionContainer from '@/components/questions/Questions'
 import UserDashboard from '@/components/users/UserDashboard'
 Vue.use(Router)
 
@@ -12,10 +14,6 @@ export default new Router({
       path: '/',
       component: Splash,
       name: 'Splash',
-      beforeEnter: (a, b, c) => {
-        console.log(store.state.auth.user)
-        c()
-      }
     },
     {
       path: '/login',
@@ -30,16 +28,29 @@ export default new Router({
       }
     },
     {
-      path: '/user/:id',
-      component: UserDashboard,
-      name: 'user',
+      path: '/home',
+      component: Home,
+      name: 'home',
       beforeEnter: (to, from, next) => {
         if (store.state.auth.loggedIn) {
           next()
         } else {
           next('/login')
         }
-      }
-    }
+      },
+      children: [
+        {
+          path: '/user/:id',
+          component: UserDashboard,
+          name: 'user',
+        },
+        {
+          path: '/questions',
+          component: QuestionContainer,
+          name: 'questions',
+        }
+      ]
+    },
+    { path: '*', redirect: {name: 'Splash'}}
   ]
 })
