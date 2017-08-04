@@ -19,7 +19,7 @@ const mutations = {
 const actions = {
   requestQuestions: async ({commit}) => {
     let questions = await database.ref('questions')
-        .once('value', question => 
+        .on('value', question => 
           commit('RECEIVE_QUESTIONS', question.val())
         )
   }
