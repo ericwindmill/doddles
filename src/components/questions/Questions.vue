@@ -1,9 +1,9 @@
 <template>
   <div class='QuestionContainer'>
-    <div class='QuestionContainer--QuestionList'>
+    <div v-show='list' class='QuestionContainer--QuestionList'>
       <h1>Questions</h1>
       <p> Questions about 'search term' commonly asked during phone screens.</p>
-      <ul>
+      <ul id='QuestionUL'>
         <li
           v-for='(question, index) in Questions'
           :key='index'
@@ -20,7 +20,6 @@
           <transition name="fade" mode="in-out">
             <question-detail
                 class='QuestionContainer--Detail'
-                v-transition
                 v-show='show === index'
                 :question='question'
                 :index='index'
@@ -29,6 +28,11 @@
         </li>
       </ul>
     </div>
+    <div v-show="list === null" class='search-error'>
+      <h4> Sorry, we didn't find any questions for that category.</h4>
+      <p> Care to submit one? </p>
+      <button> Submit Question </button>
+    </div>
   </div>
 </template>
 
@@ -36,9 +40,12 @@
 import { mapGetters, mapActions, mapMutations } from 'vuex'
 import { questionsRef } from '../../firebase'
 import QuestionDetail from './QuestionDetail'
+
+
 export default {
   data() {
     return {
+      list: null,
       answer: Object,
       selectedId: '',
       show: false
@@ -49,7 +56,7 @@ export default {
         'Questions',
         'Tags',
         'Companies'
-    ])
+    ]),
   },
   methods: {
     ...mapActions([
@@ -65,7 +72,13 @@ export default {
       }
     }
   },
+  watch: {
+    'Questions': function(oldVal, newVal) {
+      this.list =  oldVal
+    }
+  },
   created: async function () {
+    // this.list =  this.$el.querySelector('.QuestionUL')
     await this.requestQuestions()
     await this.requestTags()
     await this.requestCompanies()
@@ -115,8 +128,16 @@ export default {
   color: var(--red);
   height: 1em;
 }
-  
 
+.search-error > h4 {
+  color: var(--red);
+  font-size: 30px;
+  padding-bottom: 30px;
+}
+
+.search-error > p {
+  font-size: 24px;
+}
 
 /*Transition*/
 .QuestionContainer--Detail.v-enter,

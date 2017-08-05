@@ -1,6 +1,7 @@
 <template>
   <div class='LeftNav'>
     <div v-show="routeName === 'questions'" class='LeftNav--Questions'>
+      <search></search>
       <ul class='LeftNav--Categories'>
         <li @click='handleCategory' data-category='all'>
           <icon class='nav-symbol' name="circle-thin"></icon> 
@@ -37,10 +38,11 @@
 
 <script>
 import { mapGetters, mapActions, mapMutations } from 'vuex'
+import Search from '../util/search'
 export default {
   data() {
     return {
-      routeName: '',
+      routeName: 'user',
       category: ''
     }
   },
@@ -57,6 +59,9 @@ export default {
       this.category = e.target.dataset.category
       this.searchTerm(this.category)
     }
+  },
+  components: {
+    search: Search
   }
 
 }

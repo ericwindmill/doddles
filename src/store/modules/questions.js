@@ -46,12 +46,30 @@ const actions = {
       )
   },
   searchTerm: async({commit}, term) => {
-    let searched = await database.ref('questions')
-      .orderByChild(`tags/${term}`)
-      .equalTo(term)
-      .once('value', questions => {
-        commit('RECEIVE_QUESTIONS', questions.val())
-    })
+    if (term === '') {
+
+    } else if (term === 'all') {
+      await database.ref('questions')
+        .on('value', questions => {
+          commit('RECEIVE_QUESTIONS', questions.val())
+        })
+      //company search
+    } else if (state.companies.includes(term)) {
+      await database.ref('questions')
+        .orderByChild(`companies/${term}`)
+        .equalTo(term)
+        .once('value', questions => {
+          commit('RECEIVE_QUESTIONS', questions.val())
+        })
+      //tag search
+    } else {
+      await database.ref('questions')
+        .orderByChild(`tags/${term}`)
+        .equalTo(term)
+        .once('value', questions => {
+          commit('RECEIVE_QUESTIONS', questions.val())
+      })
+    }
   }
 }
 
