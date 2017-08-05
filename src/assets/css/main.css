@@ -26,7 +26,12 @@
   --indigo-text: #3e4155;
 
   /*Teal  (Helpful Info, Secondary Color, Secondary Graph)*/
-
+--teal: #47C1BF;
+--teal-lighter: #E0F5F5;
+--teal-light: #B7ECEC;
+--teal-dark: #00848E;
+--teal-darker: #003135;
+--teal-text: #405352;
 
   /*Green (Success Tips)*/
 
@@ -35,7 +40,12 @@
 
 
   /*Red (Errors, Critical Tips)*/
-
+--red: #ED6347;
+--red-ligher: #FBEAE5;
+--red-light: #FEAF9A;
+--red-dark: #BF0711;
+--red-darker: #330101;
+--red-text: #583C35;
 
   /*Purple (Graphing)*/
 
@@ -53,6 +63,9 @@
 
 
 /*RESETS*/
+html, body {
+  background-color: var(--grey)
+}
 
 h1, h2, h3, h4, p, a {
   padding: 0;
@@ -87,4 +100,16 @@ h3 {
 
 .button:hover {
   background-color: var(--indigo-dark);
+}
+
+
+/*font-awesome reset*/
+.fa-icon {
+  color: var(--ink);
+  width: auto;
+  height: 2em; /* or any other relative font sizes */
+}
+
+.fa-icon:hover {
+  color: var(--brand-color)
 }

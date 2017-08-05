@@ -1,6 +1,6 @@
 <template>
-  <div class='Footer'>
-    <h2> some footer action </h2>
+  <div class='QuestionNav'>
+    
   </div>
 </template>
 
@@ -11,7 +11,5 @@ export default {
 </script>
 
 <style>
-.Footer {
-}
-  
+
 </style>

@@ -1,25 +1,49 @@
 <template>
   <div class='QuestionContainer'>
-    <h2> hello from the main shabang</h2>
-    <ul>
-      <li
-        v-for='(question, index) in Questions'
-        :key='index'
-      > {{question.question}} </li>
-    </ul>
-    <ul>
-      <li
-        v-for='(tag, index) in Tags'
-        :key='index'
-      > {{tag}} </li>
-    </ul>
+    <div class='QuestionContainer--QuestionList'>
+      <h1>Questions</h1>
+      <p> Questions about 'search term' commonly asked during phone screens.</p>
+      <ul>
+        <li
+          v-for='(question, index) in Questions'
+          :key='index'
+        >   
+          <div class='QuestionContainer--Question'
+            @click='changeShow(index)'
+          >
+            <span> {{question.question}} </span>
+            <span> 
+              <icon v-show='index !== show' class='open-icon' name="chevron-down"></icon> 
+              <icon v-show='index === show' class='close-icon' name="times"></icon> 
+            </span>
+          </div>
+          <transition name="fade" mode="in-out">
+            <question-detail
+                class='QuestionContainer--Detail'
+                v-transition
+                v-show='show === index'
+                :question='question'
+                :index='index'
+            ></question-detail>
+          </transition>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
 <script>
 import { mapGetters, mapActions, mapMutations } from 'vuex'
 import { questionsRef } from '../../firebase'
+import QuestionDetail from './QuestionDetail'
 export default {
+  data() {
+    return {
+      answer: Object,
+      selectedId: Number,
+      show: false
+    }
+  },
   computed: {
     ...mapGetters([
         'Questions',
@@ -32,16 +56,97 @@ export default {
         'requestQuestions',
         'requestTags',
         'requestCompanies'
-    ])
+    ]),
+    changeShow (index) {
+      if (this.show === index) {
+        this.show = false
+      } else { 
+        this.show = index
+      }
+    }
   },
   created: async function () {
     await this.requestQuestions()
     await this.requestTags()
     await this.requestCompanies()
+  },
+  components: {
+    questionDetail: QuestionDetail
   }
 }
 </script>
 
 <style>
+.QuestionContainer {
+
+
+}
+
+.QuestionContainer h1 {
+  line-height: 2;
+}
+
+.QuestionContainer--QuestionList {
+  max-height: 90vh;
+  overflow-y: scroll;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: -5px 5px 10px var(--grey-dark);
+  padding: 50px 100px;
+
+}
+
+.QuestionContainer--QuestionList > ul {
+  border: 3px solid var(--brand-light);
+  border-radius: 5px;
+  padding: 0;
+}
+
+.QuestionContainer--QuestionList > ul > li {
+  list-style: none;
+  border-bottom: 1px solid var(--brand-light);
+}
+
+.QuestionContainer--Question {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+/*UTILITY*/
+.open-icon {
+  width: auto;
+  height: 1em;
+  color: var(--teal-dark);
+}
+
+.open-icon:hover {
+  color: var(--teal);
+}
+
+.close-icon {
+  color: var(--red);
+  height: 1em;
+}
   
+
+
+/*Transition*/
+.QuestionContainer--Detail.v-enter,
+.QuestionContatiner--Detail.v-leave {
+    height: 0;
+    opacity: 0;
+}
+
+.fade-enter-active, .fade-leave {
+  transition: all .1s;
+}
+
+.fade-enter, .fade-leave-to  {
+  transform: translateY(-10px);
+  height: 0;
+  opacity: 0;
+}
 </style>

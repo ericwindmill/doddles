@@ -1,7 +1,7 @@
 <template>
   <div class='TopNav'>
     <router-link class='TopNav--Brand' to='/'> 
-      <h1>Doddl.es</h1>
+      <h2>Doddl.es</h2>
       <h4> <em>dod-dle</em>: / dädl / a very easy task. </h4>   
     </router-link>
     <div class='TopNav--Nav'>
@@ -26,10 +26,11 @@ export default {
 
 <style scoped>
 .TopNav {
-  border-bottom: 1px solid lightgray;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: var(--grey);
+  padding: 30px 20px;
 }
 .TopNav--Brand {
   color: var(--ink);
