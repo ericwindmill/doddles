@@ -3,9 +3,15 @@
     <h2> hello from the main shabang</h2>
     <ul>
       <li
-        v-for='(question, index) in showAllQuestions'
+        v-for='(question, index) in Questions'
         :key='index'
       > {{question.question}} </li>
+    </ul>
+    <ul>
+      <li
+        v-for='(tag, index) in Tags'
+        :key='index'
+      > {{tag}} </li>
     </ul>
   </div>
 </template>
@@ -16,17 +22,22 @@ import { questionsRef } from '../../firebase'
 export default {
   computed: {
     ...mapGetters([
-        'showAllQuestions'
+        'Questions',
+        'Tags',
+        'Companies'
     ])
   },
   methods: {
     ...mapActions([
-        'requestQuestions'
+        'requestQuestions',
+        'requestTags',
+        'requestCompanies'
     ])
   },
   created: async function () {
     await this.requestQuestions()
-    console.log(this.showAllQuestions)
+    await this.requestTags()
+    await this.requestCompanies()
   }
 }
 </script>

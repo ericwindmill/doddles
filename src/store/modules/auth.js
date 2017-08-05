@@ -1,4 +1,4 @@
-import { auth, googleAuthProvider } from '../../firebase'
+import { auth, googleAuthProvider, database } from '../../firebase'
 
 const state = {
     loggedIn: false,
@@ -25,9 +25,16 @@ const mutations = {
 }
 
 const actions = {
-    logIn: ({commit}, user) => {
-         auth.signInWithPopup(googleAuthProvider)
-        .then(user => commit('LOG_IN', user.user))
+    logIn: async ({commit}, user) => {
+        await auth.signInWithPopup(googleAuthProvider)
+            .then(user => {
+                commit('LOG_IN', user.user)
+                database.ref('users/' + user.user.uid)
+                    .set({
+                        username: user.user.displayName,
+                        questions: [0, ]
+                    })
+            })
     },
     logOut: ({commit}) => {
         auth.signOut()

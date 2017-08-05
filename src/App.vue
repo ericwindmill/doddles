@@ -20,14 +20,23 @@ export default {
     AppFooter
   },
   methods: {
-    ...mapMutations([
-      'LOG_IN'
-    ])
+
   },
   computed: {
     ...mapGetters([
       'userLoggedIn',
       'showUser'
+    ])
+  },
+  methods: {
+    ...mapActions([
+        'requestQuestions',
+        'requestTags',
+        'requestCompanies',
+        'logIn'
+    ]),
+    ...mapMutations([
+      'LOG_IN'
     ])
   },
   created () {
