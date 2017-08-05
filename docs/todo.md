@@ -33,4 +33,3 @@
   - Dynamically render navbar / card categories
 
 ### (v0.1)
-  - Add the question part!

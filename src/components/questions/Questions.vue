@@ -77,23 +77,8 @@ export default {
 </script>
 
 <style>
-.QuestionContainer {
-
-
-}
-
 .QuestionContainer h1 {
   line-height: 2;
-}
-
-.QuestionContainer--QuestionList {
-  max-height: 90vh;
-  overflow-y: scroll;
-  background-color: white;
-  border-radius: 5px;
-  box-shadow: -5px 5px 10px var(--grey-dark);
-  padding: 50px 100px;
-
 }
 
 .QuestionContainer--QuestionList > ul {
