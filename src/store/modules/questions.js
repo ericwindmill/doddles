@@ -44,6 +44,14 @@ const actions = {
       .on('value', company =>
         commit('RECEIVE_COMPANIES', company.val())
       )
+  },
+  searchTerm: async({commit}, term) => {
+    let searched = await database.ref('questions')
+      .orderByChild(`tags/${term}`)
+      .equalTo(term)
+      .once('value', questions => {
+        commit('RECEIVE_QUESTIONS', questions.val())
+    })
   }
 }
 

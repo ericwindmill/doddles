@@ -40,7 +40,7 @@ export default {
   data() {
     return {
       answer: Object,
-      selectedId: Number,
+      selectedId: '',
       show: false
     }
   },

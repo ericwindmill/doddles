@@ -36,10 +36,12 @@
 </template>
 
 <script>
+import { mapGetters, mapActions, mapMutations } from 'vuex'
 export default {
   data() {
     return {
-      routeName: ''
+      routeName: '',
+      category: ''
     }
   },
   watch: {
@@ -48,8 +50,12 @@ export default {
     }
   },
   methods: {
-    handleCategory() {
-      
+    ...mapActions([
+      'searchTerm'
+    ]),
+    handleCategory(e) {
+      this.category = e.target.dataset.category
+      this.searchTerm(this.category)
     }
   }
 
