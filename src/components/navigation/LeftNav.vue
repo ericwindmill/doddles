@@ -42,7 +42,7 @@ import Search from '../util/search'
 export default {
   data() {
     return {
-      routeName: 'user',
+      routeName: '',
       category: ''
     }
   },
@@ -50,6 +50,9 @@ export default {
     '$route' (to, from) {
       this.routeName = to.name
     }
+  },
+  created() {
+    this.routeName = this.$route.name
   },
   methods: {
     ...mapActions([

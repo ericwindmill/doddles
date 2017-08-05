@@ -11,7 +11,10 @@
           <div class='QuestionContainer--Question'
             @click='changeShow(index)'
           >
-            <span> {{question.question}} </span>
+            <span class='Question--Question'> 
+              <icon class='QuestionComplete' name='circle'></icon>
+              <h4>{{question.question}}</h4>
+            </span>
             <span> 
               <icon v-show='index !== show' class='open-icon' name="chevron-down"></icon> 
               <icon v-show='index === show' class='close-icon' name="times"></icon> 
@@ -70,6 +73,9 @@ export default {
       } else { 
         this.show = index
       }
+    },
+    markComplete () {
+      console.log('complete!')
     }
   },
   watch: {
@@ -94,6 +100,10 @@ export default {
   line-height: 2;
 }
 
+.QuestionContainer--QuestionList > p {
+  line-height: 3;
+}
+
 .QuestionContainer--QuestionList > ul {
   border: 3px solid var(--brand-light);
   border-radius: 5px;
@@ -111,8 +121,6 @@ export default {
   justify-content: space-between;
 }
 
-
-
 /*UTILITY*/
 .open-icon {
   width: auto;
@@ -129,6 +137,17 @@ export default {
   height: 1em;
 }
 
+.QuestionComplete {
+  height: 1em;
+  padding-right: 10px;
+  color: var(--red);
+}
+
+.Question--Question {
+  display: flex;
+  align-items: center;
+}
+
 .search-error > h4 {
   color: var(--red);
   font-size: 30px;
@@ -136,7 +155,7 @@ export default {
 }
 
 .search-error > p {
-  font-size: 24px;
+  font-size: 30px;
 }
 
 /*Transition*/

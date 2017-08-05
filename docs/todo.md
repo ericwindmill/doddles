@@ -7,12 +7,15 @@
 
 ## Users
   ### :white_check_mark: Users can log in.
-  ### Users can track progress with different categories.
+  ### Users can mark progress on questions.
       --> How is this going to work? Users hold an array of question keys which they've marked as done?
       --> But the keys for the questions are randomly generated, which could be an issue.
+  ### Users can see some DATA VIZ.
 
 ## CMS
-  ### Add update ability to questions for admins.
+  ### Add Questions
+  ### Submit Questions
+  ### Update Questions
   
 ## Quizes
   ### Users can take quizes. 

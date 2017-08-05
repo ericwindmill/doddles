@@ -102,6 +102,12 @@ h3 {
   background-color: var(--indigo-dark);
 }
 
+.seperator {
+  width: calc(100% - 20px);
+  border-bottom: 1px solid var(--grey);
+  margin: 20px auto;
+}
+
 
 /*font-awesome reset*/
 .fa-icon {
@@ -111,5 +117,5 @@ h3 {
 }
 
 .fa-icon:hover {
-  color: var(--brand-color)
+  color: var(--brand);
 }
