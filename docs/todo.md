@@ -1,12 +1,12 @@
 # Feature Timeline
 
 ## MVP's
-  ### Users can search questions.
-  ### Users can see questions and answers.
-  ### Users can filter questions by type and company.
+  ### :white_check_mark: Users can search questions.
+  ### :white_check_mark: Users can see questions and answers.
+  ### :white_check_mark: Users can filter questions by type and company.
 
 ## Users
-  ### Users can log in.
+  ### :white_check_mark: Users can log in.
   ### Users can track progress with different categories.
       --> How is this going to work? Users hold an array of question keys which they've marked as done?
       --> But the keys for the questions are randomly generated, which could be an issue.
@@ -29,7 +29,7 @@
   # Todo
   ### (v0)
   - Make AddQuestion a protected route
-  - Fuzzy Search
   - Dynamically render navbar / card categories
 
 ### (v0.1)
+  - Fuzzy Search
