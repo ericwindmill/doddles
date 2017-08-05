@@ -1,15 +1,15 @@
 <template>
   <div class='Home'>
-    <question-nav class='Home--Nav'></question-nav>
+    <left-nav class='Home--Nav'></left-nav>
     <router-view class='Home--Content'></router-view>
   </div>
 </template>
 
 <script>
-import QuestionNav from './navigation/QuestionNav'
+import LeftNav from './navigation/LeftNav'
 export default {
   components: {
-    questionNav: QuestionNav
+    leftNav: LeftNav
   }
 }
 </script>
