@@ -35,7 +35,7 @@ import QuestionDetail from './QuestionDetail'
 export default {
   data() {
     return {
-      list: null,
+      list: 'all',
       show: false,
     }
   },
@@ -60,9 +60,6 @@ export default {
     }
   },
   created: async function () {
-    await this.requestQuestions()
-    await this.requestTags()
-    await this.requestCompanies()
 
   },
   components: {
@@ -95,6 +92,7 @@ export default {
   display: flex;
   justify-content: space-between;
 }
+
 
 /*UTILITY*/
 

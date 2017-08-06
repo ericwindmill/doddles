@@ -38,7 +38,6 @@ export default {
   data(){
     return {
       complete: false,
-      list: null,
       show: false,
     }
   },
