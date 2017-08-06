@@ -6,7 +6,7 @@ const state = {
         id: '',
         name: '',
         email: '',
-        picture: ''
+        picture: '',
     }
 }
 
@@ -21,6 +21,7 @@ const mutations = {
     'LOG_OUT' (state) {
         state.user = {}
         state.loggedIn = false
+        state.completedQuestions = []
     }
 }
 
@@ -51,7 +52,6 @@ const actions = {
             .once('value', function(snapshot) {
                 exists = (snapshot.val() !== null)
             })
-        console.log(exists)
         if (!exists) {
             database.ref(`users/${state.user.id}/questions`)
                 .child(`${questionId}`)

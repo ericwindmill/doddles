@@ -11,7 +11,8 @@ import { mapGetters, mapMutations, mapActions } from 'vuex'
 export default {
     methods: {
         ...mapActions([
-            'logOut'
+            'logOut',
+            'requestCompletedQuestions'
         ])
     },
     computed: {
@@ -19,6 +20,9 @@ export default {
             'userLoggedIn',
             'showUser'
         ])
+    },
+    created() {
+        this.requestCompletedQuestions(this.showUser)
     }
 }
 </script>
