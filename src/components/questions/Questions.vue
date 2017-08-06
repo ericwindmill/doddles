@@ -49,16 +49,12 @@ export default {
   data() {
     return {
       list: null,
-      answer: Object,
-      selectedId: '',
-      show: false
+      show: false,
     }
   },
   computed: {
     ...mapGetters([
         'Questions',
-        'Tags',
-        'Companies'
     ]),
   },
   methods: {
@@ -88,6 +84,7 @@ export default {
     await this.requestQuestions()
     await this.requestTags()
     await this.requestCompanies()
+
   },
   components: {
     questionDetail: QuestionDetail

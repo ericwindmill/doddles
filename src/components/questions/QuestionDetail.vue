@@ -1,5 +1,7 @@
 <template>
   <div class="QuestionDetail">
+
+
     <div class='QuestionDetail--Answer' v-html='question.answer'></div>
     <div class='seperator'></div>
     <div class='QuestionDetail--Next'>
@@ -21,7 +23,9 @@ export default {
   },
   data(){
     return {
-      complete: false
+      complete: false,
+      list: null,
+      show: false,
     }
   },
   computed: {

@@ -21,7 +21,6 @@ const mutations = {
     'LOG_OUT' (state) {
         state.user = {}
         state.loggedIn = false
-        state.completedQuestions = []
     }
 }
 
