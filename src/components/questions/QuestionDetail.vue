@@ -4,12 +4,13 @@
     <div class='seperator'></div>
     <div class='QuestionDetail--Next'>
       <p>Got this one down?</p>
-      <button class='button'> Mark as complete </button>
+      <button @click='markQuestion(index)' class='button'> Mark as complete </button>
     </div>
   </div>
 </template>
 
 <script>
+import { mapGetters, mapActions, mapMutations } from 'vuex'
 export default {
   props: {
     question: {
@@ -17,6 +18,16 @@ export default {
     },
     index: {
     },
+  },
+  computed: {
+    ...mapGetters([
+      'showUser'
+    ])
+  },
+  methods: {
+    ...mapActions([
+      'markQuestion'
+    ])
   }
 }
 </script>

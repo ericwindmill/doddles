@@ -27,18 +27,39 @@ const mutations = {
 const actions = {
     logIn: async ({commit}, user) => {
         await auth.signInWithPopup(googleAuthProvider)
-            .then(user => {
+            .then(async user => {
                 commit('LOG_IN', user.user)
-                database.ref('users/' + user.user.uid)
-                    .set({
-                        username: user.user.displayName,
-                        questions: [0, ]
+                let exists
+                await database.ref(`users/${state.user.id}`)
+                    .once('value', function(snapshot) {
+                        exists = (snapshot.val() !== null)
                     })
+                // preserve the user if already exists
+                if (!exists) {
+                    database.ref(`users/${state.user.id}/questions`)
+                        .set([0])
+                }
             })
     },
     logOut: ({commit}) => {
         auth.signOut()
         .then(user => commit('LOG_OUT'))
+    },
+    markQuestion: async ({commit}, questionId) => {
+        let exists
+        await database.ref(`users/${state.user.id}/questions/${questionId}`)
+            .once('value', function(snapshot) {
+                exists = (snapshot.val() !== null)
+            })
+        console.log(exists)
+        if (!exists) {
+            database.ref(`users/${state.user.id}/questions`)
+                .child(`${questionId}`)
+                .set(true)
+        } else {
+            database.ref(`users/${state.user.id}/questions/${questionId}`)
+                .remove()
+        }
     }
 }
 

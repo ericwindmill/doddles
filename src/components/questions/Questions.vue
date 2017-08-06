@@ -13,7 +13,7 @@
           >
             <span class='Question--Question'> 
               <icon class='QuestionComplete' name='circle'></icon>
-              <h4>{{question.question}}</h4>
+              <h4> {{question.question}}</h4>
             </span>
             <span> 
               <icon v-show='index !== show' class='open-icon' name="chevron-down"></icon> 
