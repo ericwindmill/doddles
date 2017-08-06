@@ -34,7 +34,12 @@
 --teal-text: #405352;
 
   /*Green (Success Tips)*/
-
+--green: #50B83C;
+--green-lighter:#E3F1DF;
+--green-light:#BBE5B3;
+--green-dark:#108043;
+--green-darker: #173630;
+--green-text: #414F3E;
 
   /*Blue (Text Links)*/
 
