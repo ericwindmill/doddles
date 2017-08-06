@@ -3,7 +3,7 @@
     <h2 class='CategoryMetrics--Title' > {{formattedTag}}: {{percentComplete}}%</h2>
     <h3> {{complete.length}} out of {{taggedQuestions.length}} complete </h3>
     <p> Next {{formattedTag}} question: {{nextTagQuestion}} </p>
-    <router-link tag='button' class='CategoryMetrics--Button button' to="/questions" >{{formattedTag}} Questions</router-link>
+    <router-link tag='button' @click.native='handleSearch()' class='CategoryMetrics--Button button' to="/questions" >{{formattedTag}} Questions</router-link>
   </div>
 </template>
 
@@ -37,8 +37,13 @@ export default {
   },
   methods: {
     ...mapActions([
-      'fetchTaggedQuestions'
+      'fetchTaggedQuestions',
+      'searchTerm'
     ]),
+    handleSearch: function () {
+      console.log(this.tag)
+      this.searchTerm(this.tag.toLowerCase().trim())
+    },
     fetchTaggedQuestions: async function () {
       let tagged = []
       await database.ref(`/tags/${this.tag}`).on('value', questionId => {
