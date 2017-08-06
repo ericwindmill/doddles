@@ -8,12 +8,10 @@
         <category-metrics
             :tag='tag'
             :index='index'
-            :questions='taggedAndCompleted(tag)'
         ></category-metrics>
     </div>
     <hr>
     <button class='button' v-show='userLoggedIn' @click='logOut'> Sign Out </button>
-
   </div>
 </template>
 
@@ -22,32 +20,16 @@ import CategoryMetrics from './CategoryMetrics'
 import { mapGetters, mapMutations, mapActions } from 'vuex'
 import { database } from '../../firebase'
 export default {
-    data() {
+    data() { 
         return {
-
+            
         }
     },
     methods: {
         ...mapActions([
             'logOut',
-            'requestCompletedQuestions'
+            'requestCompletedQuestions',
         ]),
-        taggedAndCompleted: function (tag) {
-            let tagged = []
-            let completed = []
-            database.ref(`tags/${tag}`)
-                .on('value', questionId => {
-                    Object.keys(questionId.val()).forEach(id => {
-                        tagged.push(id)
-                    })
-                })
-            this.allCompletedQuestions.forEach(questionId => {
-                if (tagged.includes(questionId)) {
-                    completed.push(questionId)
-                }
-            })
-            return completed
-        }
     },
     computed: {
         ...mapGetters([
@@ -60,8 +42,6 @@ export default {
     },
     created: async function () {
         await this.requestCompletedQuestions(this.showUser)
-
-
     },
     components: {
         categoryMetrics: CategoryMetrics
