@@ -10,6 +10,8 @@
   ### :white_check_mark: Users can mark progress on questions.
   ### Users can see some DATA VIZ.
 
+-- At this point, I should be able to polish up UI and deploy.
+
 ## CMS
   ### Add Questions
   ### Submit Questions

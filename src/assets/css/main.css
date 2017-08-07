@@ -53,7 +53,12 @@
 --red-text: #583C35;
 
   /*Purple (Graphing)*/
-
+--purple: #9C6ADE;
+--purple-lighter: #F6F0FD;
+--purple-light: #E3D0FF;
+--purple-dark: #50248F;
+--purple-darker: #230051;
+--purple-text: #50495A;
 
   /*Greys (Shadows)*/
   --grey: #DFE4E8;

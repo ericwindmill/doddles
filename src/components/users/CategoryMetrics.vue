@@ -2,7 +2,10 @@
   <div class='CategoryMetrics'>
     <h2 class='CategoryMetrics--Title' > {{formattedTag}}: {{percentComplete}}%</h2>
     <h3> {{complete.length}} out of {{taggedQuestions.length}} complete </h3>
-    <p> Next {{formattedTag}} question: {{nextTagQuestion}} </p>
+    <category-donut 
+      :completeNum='complete.length'
+      :totalNum='taggedQuestions.length'
+    ></category-donut>
     <router-link tag='button' @click.native='handleSearch()' class='CategoryMetrics--Button button' to="/questions" >{{formattedTag}} Questions</router-link>
   </div>
 </template>
@@ -10,6 +13,7 @@
 <script>
 import { database } from '../../firebase'
 import { mapGetters, mapActions, mapMutations } from 'vuex'
+import CategoryDonut from './CategoryDonut'
 export default {
   props: {
     tag: {},
@@ -32,7 +36,11 @@ export default {
       return Math.round((this.complete.length / this.taggedQuestions.length) * 100)
     },
     nextTagQuestion: function () {
-      return this.incomplete[0]
+      let next = this.incomplete[0]
+      if (this.Questions[next]) {
+         let question = this.Questions[next].question
+         return question
+      }
     }
   },
   methods: {
@@ -41,7 +49,6 @@ export default {
       'searchTerm'
     ]),
     handleSearch: function () {
-      console.log(this.tag)
       this.searchTerm(this.tag.toLowerCase().trim())
     },
     fetchTaggedQuestions: async function () {
@@ -97,6 +104,9 @@ export default {
     await this.filterCompleted()
     await this.filterIncomplete()
     this.formatTag()
+  },
+  components: {
+    categoryDonut:CategoryDonut
   }
 }
 </script>
@@ -104,7 +114,7 @@ export default {
 <style>
   .CategoryMetrics {
     width: 250px;
-    height: 250px;
+    height: 350px;
     flex: 1 1 100%;
     padding: 30px;
     background-color: var(--grey-light);
@@ -117,6 +127,6 @@ export default {
 
   .CategoryMetrics--Title {
     text-align: center;
-    border-bottom: 3px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
   }
 </style>
