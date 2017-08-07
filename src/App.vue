@@ -33,21 +33,24 @@ export default {
         'requestQuestions',
         'requestTags',
         'requestCompanies',
+        'requestCompletedQuestions',
         'logIn'
     ]),
     ...mapMutations([
       'LOG_IN'
     ])
   },
-  created () {
-    auth.onAuthStateChanged(user => {
+  created: async function() {
+    await auth.onAuthStateChanged(user => {
       if (user) {
         this.LOG_IN(user)
         this.$router.push(`/user/${this.showUser.id}`)
+        this.requestCompletedQuestions(user)
       } else {
         this.$router.push('/')
       }
     })
+    // this.requestCompletedQuestions()
   }
 }
 // ${this.showUser.id}

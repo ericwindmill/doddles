@@ -7,12 +7,15 @@
 
 ## Users
   ### :white_check_mark: Users can log in.
-  ### Users can track progress with different categories.
-      --> How is this going to work? Users hold an array of question keys which they've marked as done?
-      --> But the keys for the questions are randomly generated, which could be an issue.
+  ### :white_check_mark: Users can mark progress on questions.
+  ### Users can see some DATA VIZ.
+
+-- At this point, I should be able to polish up UI and deploy.
 
 ## CMS
-  ### Add update ability to questions for admins.
+  ### Add Questions
+  ### Submit Questions
+  ### Update Questions
   
 ## Quizes
   ### Users can take quizes. 
@@ -24,7 +27,6 @@
 ## Forever Evolving:
   ### Intuitive (and pretty!) UI 
   ### Organization of 'all questions'.
-    - Alternatively, I could make the landing page have cards with subjects on it, and not list the questions until you pick a category.
 
   # Todo
   ### (v0)

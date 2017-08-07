@@ -34,7 +34,12 @@
 --teal-text: #405352;
 
   /*Green (Success Tips)*/
-
+--green: #50B83C;
+--green-lighter:#E3F1DF;
+--green-light:#BBE5B3;
+--green-dark:#108043;
+--green-darker: #173630;
+--green-text: #414F3E;
 
   /*Blue (Text Links)*/
 
@@ -48,7 +53,12 @@
 --red-text: #583C35;
 
   /*Purple (Graphing)*/
-
+--purple: #9C6ADE;
+--purple-lighter: #F6F0FD;
+--purple-light: #E3D0FF;
+--purple-dark: #50248F;
+--purple-darker: #230051;
+--purple-text: #50495A;
 
   /*Greys (Shadows)*/
   --grey: #DFE4E8;
@@ -102,6 +112,12 @@ h3 {
   background-color: var(--indigo-dark);
 }
 
+.seperator {
+  width: calc(100% - 20px);
+  border-bottom: 1px solid var(--grey);
+  margin: 20px auto;
+}
+
 
 /*font-awesome reset*/
 .fa-icon {
@@ -111,5 +127,5 @@ h3 {
 }
 
 .fa-icon:hover {
-  color: var(--brand-color)
+  color: var(--brand);
 }

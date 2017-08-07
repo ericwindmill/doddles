@@ -8,19 +8,9 @@
           v-for='(question, index) in Questions'
           :key='index'
         >   
-          <div class='QuestionContainer--Question'
-            @click='changeShow(index)'
-          >
-            <span> {{question.question}} </span>
-            <span> 
-              <icon v-show='index !== show' class='open-icon' name="chevron-down"></icon> 
-              <icon v-show='index === show' class='close-icon' name="times"></icon> 
-            </span>
-          </div>
           <transition name="fade" mode="in-out">
             <question-detail
                 class='QuestionContainer--Detail'
-                v-show='show === index'
                 :question='question'
                 :index='index'
             ></question-detail>
@@ -45,17 +35,13 @@ import QuestionDetail from './QuestionDetail'
 export default {
   data() {
     return {
-      list: null,
-      answer: Object,
-      selectedId: '',
-      show: false
+      list: 'all',
+      show: false,
     }
   },
   computed: {
     ...mapGetters([
         'Questions',
-        'Tags',
-        'Companies'
     ]),
   },
   methods: {
@@ -64,12 +50,8 @@ export default {
         'requestTags',
         'requestCompanies'
     ]),
-    changeShow (index) {
-      if (this.show === index) {
-        this.show = false
-      } else { 
-        this.show = index
-      }
+    markComplete () {
+      console.log('complete!')
     }
   },
   watch: {
@@ -78,10 +60,7 @@ export default {
     }
   },
   created: async function () {
-    // this.list =  this.$el.querySelector('.QuestionUL')
-    await this.requestQuestions()
-    await this.requestTags()
-    await this.requestCompanies()
+
   },
   components: {
     questionDetail: QuestionDetail
@@ -92,6 +71,10 @@ export default {
 <style>
 .QuestionContainer h1 {
   line-height: 2;
+}
+
+.QuestionContainer--QuestionList > p {
+  line-height: 3;
 }
 
 .QuestionContainer--QuestionList > ul {
@@ -106,28 +89,12 @@ export default {
 }
 
 .QuestionContainer--Question {
-  padding: 20px;
   display: flex;
   justify-content: space-between;
 }
 
 
-
 /*UTILITY*/
-.open-icon {
-  width: auto;
-  height: 1em;
-  color: var(--teal-dark);
-}
-
-.open-icon:hover {
-  color: var(--teal);
-}
-
-.close-icon {
-  color: var(--red);
-  height: 1em;
-}
 
 .search-error > h4 {
   color: var(--red);
@@ -136,7 +103,7 @@ export default {
 }
 
 .search-error > p {
-  font-size: 24px;
+  font-size: 30px;
 }
 
 /*Transition*/

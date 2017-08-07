@@ -5,9 +5,9 @@
       <h4> <em>dod-dle</em>: / dädl / a very easy task. </h4>   
     </router-link>
     <div class='TopNav--Nav'>
-      <router-link v-show='!userLoggedIn' class='TopNav--Button button' to='/login'>Log In</router-link>
-      <router-link v-show='userLoggedIn' class='TopNav--Button button' to='/questions' >Questions</router-link>
-      <router-link v-show='userLoggedIn' class='TopNav--Button button' :to="{name: 'user', params: {id: showUser.id}}" >My Dashboard</router-link>
+      <router-link active-class='TopNav--Button-active' v-show='!userLoggedIn' tag='button' class='TopNav--Button button' to='/login'>Log In</router-link>
+      <router-link active-class='TopNav--Button-active' v-show='userLoggedIn' class='TopNav--Button button' to='/questions' >Questions</router-link>
+      <router-link active-class='TopNav--Button-active' v-show='userLoggedIn' class='TopNav--Button button' :to="{name: 'user', params: {id: showUser.id}}" >My Dashboard</router-link>
     </div>
   </div>
 </template>
@@ -41,12 +41,21 @@ export default {
   background-color: transparent;
   color: var(--ink);
   box-shadow: none;
+  border-radius: 0;
+  padding: 10px 10px;
+  margin: 0 10px;
 }
 
 .TopNav--Button:hover {
   color: var(--indigo);
   border-radius: 0;
-
 }
+
+.TopNav--Button-active {
+  border-bottom: 3px solid var(--brand);
+  background-color: var(--indigo-light);
+}
+
+
   
 </style>

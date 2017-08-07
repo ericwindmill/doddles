@@ -1,4 +1,4 @@
-# noSQL Relational Database
+# noSQL Database
 ```JSON
 
   {
