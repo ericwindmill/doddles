@@ -41,7 +41,7 @@ export default {
       .outerRadius(chartHeight / 2)
       .innerRadius(chartHeight / 4)
       .padAngle(0.03)
-      .cornerRadius(8)
+      .cornerRadius(0)
 
     this.pieG = this.chartLayer
       .append("g")
@@ -59,6 +59,10 @@ export default {
   },
   methods: {
     drawChart: function(data) {
+      var color = d3.scaleOrdinal()
+          .domain(["one", "two"])
+          .range(["#50B83C" , "#003135"]);
+
       var arcs = d3.pie()
           .sort(null)
           .value(function(d) { return d.value; })
@@ -78,7 +82,9 @@ export default {
         .attr("d", this.arc)
         .attr("id", function(d, i) { return "arc-" + i })
         .attr("stroke", "gray")
-        .attr("fill", d => "#444")
+        .attr("fill", (d,i) => {
+          return color(i)
+        })
 
       newBlock.append("text")
         .attr("dx", 10)

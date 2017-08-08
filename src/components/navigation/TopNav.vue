@@ -41,18 +41,19 @@ export default {
   background-color: transparent;
   color: var(--ink);
   box-shadow: none;
-  border-radius: 0;
+  border-radius: 5px;
   padding: 10px 10px;
   margin: 0 10px;
 }
 
 .TopNav--Button:hover {
+  border-radius: 5px;
   color: var(--indigo);
-  border-radius: 0;
 }
 
 .TopNav--Button-active {
-  border-bottom: 3px solid var(--brand);
+  border-radius: 5px;
+  border-bottom: 3px solid var(--indigo);
   background-color: var(--indigo-light);
 }
 

@@ -116,16 +116,19 @@ export default {
 
 <style>
   .CategoryMetrics {
-    width: 300px;
+    max-width: 350px;
     height: 350px;
     flex: 1 1 100%;
     padding: 30px;
+    margin: 10px;
     background-color: var(--grey-light);
     border-radius: 5px;
     border-top: 5px solid var(--teal);
     display: flex;
     flex-flow: column;
     justify-content: space-between;
+    align-items: center;
+    box-shadow: 1px 1px 5px var(--grey);
   }
 
   .CategoryMetrics--Title {
