@@ -2,10 +2,11 @@
   <div class='CategoryMetrics'>
     <h2 class='CategoryMetrics--Title' > {{formattedTag}}: {{percentComplete}}%</h2>
     <h3> {{complete.length}} out of {{taggedQuestions.length}} complete </h3>
-    <category-donut 
+    <donut-chart
       :completeNum='complete.length'
       :totalNum='taggedQuestions.length'
-    ></category-donut>
+      :percentComplete='percentComplete'
+    ></donut-chart>
     <router-link tag='button' @click.native='handleSearch()' class='CategoryMetrics--Button button' to="/questions" >{{formattedTag}} Questions</router-link>
   </div>
 </template>
@@ -13,7 +14,9 @@
 <script>
 import { database } from '../../firebase'
 import { mapGetters, mapActions, mapMutations } from 'vuex'
-import CategoryDonut from './CategoryDonut'
+import donutChart from '../util/d3/donutchart.vue'
+import * as d3 from 'd3'
+
 export default {
   props: {
     tag: {},
@@ -103,17 +106,17 @@ export default {
     await this.fetchTaggedQuestions()
     await this.filterCompleted()
     await this.filterIncomplete()
-    this.formatTag()
+    await this.formatTag()
   },
   components: {
-    categoryDonut:CategoryDonut
+    donutChart:donutChart
   }
 }
 </script>
 
 <style>
   .CategoryMetrics {
-    width: 250px;
+    width: 300px;
     height: 350px;
     flex: 1 1 100%;
     padding: 30px;
