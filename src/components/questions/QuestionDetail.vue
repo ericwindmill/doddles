@@ -17,8 +17,8 @@
       <div class='QuestionDetail--Answer' v-html='question.answer'></div>
       <div class='seperator'></div>
       <div class='QuestionDetail--Next'>
-        <p>Got this one down?</p>
-        <button @click='handleMarkComplete(index)' class='button'> {{complete ? 'Remove Mark' : 'Mark as Complete'}} </button>
+        <p>{{ complete ? 'Need to study more?' : 'Got this one down?' }}</p>
+        <button @click='handleMarkComplete(index)' class='button'> {{complete ? 'Mark as Incomplete' : 'Mark as Complete'}} </button>
       </div>
     </div>
   </div>

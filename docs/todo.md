@@ -11,7 +11,7 @@
   ### :white_check_mark: Users can see some DATA VIZ.
 
 #### Aside: At this point, I should be able to polish up UI and deploy.
-  * Dash Nav
+  :white_check_mark: * Dash Nav
     * Sign Out
     * Questions
     * Submit Question
@@ -40,4 +40,6 @@
   - Dynamically render navbar / card categories
 
 ### (v0.1)
-  - Fuzzy Search
+  - Make search better
+    - Fuzzy? 
+    - Handle keywords?

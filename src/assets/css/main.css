@@ -42,7 +42,12 @@
 --green-text: #414F3E;
 
   /*Blue (Text Links)*/
-
+--blue: #007ACE;
+--blue-lighter: #B4E1FA;
+--blue-light: #B4E1FA;
+--blue-dark: #084E8A;
+--blue-darker: #001429;
+--blue-text: #3E4E57;
 
   /*Red (Errors, Critical Tips)*/
 --red: #ED6347;

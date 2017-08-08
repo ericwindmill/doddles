@@ -30,7 +30,7 @@ export default {
   justify-content: space-between;
   align-items: center;
   background-color: var(--grey);
-  padding: 30px 20px;
+  padding: 30px 0;
 }
 .TopNav--Brand {
   color: var(--ink);
