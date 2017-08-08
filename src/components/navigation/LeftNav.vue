@@ -31,7 +31,7 @@
       </ul>
     </div>
     <div v-show="routeName === 'user'" class='LeftNav-Dashboard'>
-      <p> Hello from Dash Nav </p>
+      <user-nav></user-nav>
     </div>
   </div>
 </template>
@@ -39,6 +39,7 @@
 <script>
 import { mapGetters, mapActions, mapMutations } from 'vuex'
 import Search from '../util/search'
+import UserNav from './UserNav'
 export default {
   data() {
     return {
@@ -64,35 +65,39 @@ export default {
     }
   },
   components: {
-    search: Search
+    search: Search,
+    userNav:UserNav
   }
 
 }
 </script>
 
 <style>
+.LeftNav {
+  margin-top: 50px;
+}
+
 .LeftNav--Categories {
   height: 100%;
   padding: 10px;
   color: var(--ink);
 }
 
-.LeftNav--Categories > li {
+.LeftNav--Categories > li,
+.LeftNav--Categories > li > .LeftNav--RouterLink {
   display: flex;
   align-items: center;
   list-style: none;
-  font-size: 16px;
+  font-size: 20px;
   padding: 10px 0;
+  text-decoration: none;
+  color: var(--ink);
 }
 
-.LeftNav--Categories > li:hover {
+.LeftNav--Categories > li:hover,
+.LeftNav--Categories > li:hover .LeftNav--RouterLink {
   cursor: pointer;
   color: var(--teal);
-}
-
-.LeftNav--LI-Image {
-  width: 12px;
-  padding-right: 10px;
 }
 
 .nav-symbol {
@@ -105,5 +110,9 @@ export default {
   cursor: pointer;
   color: var(--indigo);
 } 
+
+.LeftNav-Dashboard {
+  height: 100%;
+}
 </style>
 

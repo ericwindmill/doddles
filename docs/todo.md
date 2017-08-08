@@ -8,9 +8,15 @@
 ## Users
   ### :white_check_mark: Users can log in.
   ### :white_check_mark: Users can mark progress on questions.
-  ### Users can see some DATA VIZ.
+  ### :white_check_mark: Users can see some DATA VIZ.
 
--- At this point, I should be able to polish up UI and deploy.
+#### Aside: At this point, I should be able to polish up UI and deploy.
+  * Dash Nav
+    * Sign Out
+    * Questions
+    * Submit Question
+  * Splash Page
+  * Footer
 
 ## CMS
   ### Add Questions

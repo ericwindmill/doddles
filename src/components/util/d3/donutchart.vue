@@ -17,8 +17,8 @@ export default {
     dataSet: function () {
       console.log(this.loadedCompleteNum)
       return [
-        { name: 'C', value: this.completeNum},
-        { name: 'T', value: this.totalNum - this.completeNum}
+        { name: '', value: this.completeNum},
+        { name: '', value: this.totalNum - this.completeNum}
       ]
     }
   },
@@ -40,7 +40,7 @@ export default {
     this.arc = d3.arc()
       .outerRadius(chartHeight / 2)
       .innerRadius(chartHeight / 4)
-      .padAngle(0.03)
+      .padAngle(0)
       .cornerRadius(0)
 
     this.pieG = this.chartLayer
@@ -81,7 +81,7 @@ export default {
       newBlock.append("path")
         .attr("d", this.arc)
         .attr("id", function(d, i) { return "arc-" + i })
-        .attr("stroke", "gray")
+        .attr("stroke", "transparent")
         .attr("fill", (d,i) => {
           return color(i)
         })

@@ -28,7 +28,7 @@ export default {
   .Home--Content {
     flex: 1 1;
     max-width: 75%;
-    max-height: 90vh;
+    max-height: 75vh;
     overflow-y: scroll;
     background-color: white;
     border-radius: 5px;
