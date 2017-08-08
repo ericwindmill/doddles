@@ -3,14 +3,13 @@
     <span class='Footer--Col1'>
       <p>
         <router-link class='footer-link' to='/questions'>Contact</router-link> | 
-        <a class='footer-link' href='http://ericwindmill.com'> Eric Windmill </a> | 
-        <router-link class='footer-link' to='/questions'> About the project </router-link>
+        <a class='footer-link' href='http://ericwindmill.com'> Eric Windmill </a>
       </p>
     </span>
     <span class='Footer--Col2'>
-        <icon id='footer-symbol' class='nav-symbol' name="reply"></icon> 
-      <icon id='footer-symbol' class='nav-symbol' name="twitter"></icon> 
-      <icon id='footer-symbol' class='nav-symbol' name="github"></icon> 
+      <a href='mailto:eric@ericwindmill.com'><icon id='footer-symbol' class='nav-symbol' name="reply"></icon></a>
+      <a href='http://twitter.com/ericwindmill'><icon id='footer-symbol' class='nav-symbol' name="twitter"></icon></a>
+      <a href='http://github.com/ericwindmill'><icon id='footer-symbol' class='nav-symbol' name="github"></icon></a>
     </span>
   </div>
 </template>

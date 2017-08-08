@@ -11,17 +11,19 @@
   ### :white_check_mark: Users can see some DATA VIZ.
 
 #### Aside: At this point, I should be able to polish up UI and deploy.
-  :white_check_mark: * Dash Nav
+  * :white_check_mark:Dash Nav
     * Sign Out
     * Questions
     * Submit Question
   * Splash Page
-  * Footer
+  * :white_check_mark: Footer
 
 ## CMS
   ### Add Questions
   ### Submit Questions
   ### Update Questions
+  ### Contact Page
+  ### About Page
   
 ## Quizes
   ### Users can take quizes. 
