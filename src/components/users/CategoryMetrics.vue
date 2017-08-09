@@ -1,7 +1,7 @@
 <template>
   <div class='CategoryMetrics'>
-    <h2 class='CategoryMetrics--Title' > {{formattedTag}}: {{percentComplete}}%</h2>
-    <h3> {{complete.length}} out of {{taggedQuestions.length}} complete </h3>
+    <h3 class='CategoryMetrics--Title' > {{formattedTag}}: {{percentComplete}}%</h3>
+    <h4> {{complete.length}} out of {{taggedQuestions.length}} complete </h4>
     <donut-chart
       :completeNum='complete.length'
       :totalNum='taggedQuestions.length'

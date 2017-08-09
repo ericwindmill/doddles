@@ -1,30 +1,28 @@
-# interview-trivia
+# Interview Doddles
+### *dod-dle*: / dädl / a very easy task. 
 
 > Master the technical phone screen.
 
-## Build Setup
+____
+Doddles is a web application built with the following technologies:
 
-``` bash
-# install dependencies
-npm install
+* Firebase
+* Vue
+* d3
+* Javascript
+* plain CSS (as a personal expereriement into the state of good ol' fashioned CSS)
+* OAuth
+* Webpack
+* AWS
 
-# serve with hot reload at localhost:8080
-npm run dev
+___
+### Screen Shots of Working Prototype:
 
-# build for production with minification
-npm run build
+### User Dashboard
+![User Dashboard](http://res.cloudinary.com/ericwindmill/image/upload/v1502297552/doddles/Screen_Shot_2017-08-09_at_9.50.50_AM.png)
 
-# build for production and view the bundle analyzer report
-npm run build --report
+### Question Explanation
+![A question explanation](http://res.cloudinary.com/ericwindmill/image/upload/v1502297553/doddles/Screen_Shot_2017-08-09_at_9.51.18_AM.png)
 
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
-```
-
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+### Questions Page
+![Questions Page](http://res.cloudinary.com/ericwindmill/image/upload/v1502297552/doddles/Screen_Shot_2017-08-09_at_9.51.00_AM.png)

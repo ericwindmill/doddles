@@ -37,8 +37,8 @@ export default {
   color: var(--blue-dark);
 }
 
-.footer-symbol {
-  background-color: white;
+#footer-symbol {
+  padding-right: 15px;
 }
 
 #footer-symbol:hover {

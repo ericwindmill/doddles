@@ -60,6 +60,7 @@ export default {
 
 <style>
   .UserDashboard--ProgressCards {
+    margin-top: 25px;
     display:flex;
     justify-content: space-around;
     flex-flow: row wrap;
