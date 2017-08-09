@@ -13,7 +13,7 @@ export default new Router({
     {
       path: '/',
       component: Splash,
-      name: 'Splash',
+      name: 'Splash'
     },
     {
       path: '/login',

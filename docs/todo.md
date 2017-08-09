@@ -17,13 +17,13 @@
     * Submit Question
   * Splash Page
   * :white_check_mark: Footer
+  * Submit Questions / Contact Page
+  * Tips and Tricks Page
+  * Imrpove Search
 
 ## CMS
   ### Add Questions
-  ### Submit Questions
   ### Update Questions
-  ### Contact Page
-  ### About Page
   
 ## Quizes
   ### Users can take quizes. 
@@ -32,16 +32,3 @@
 ## Tracks
   ### i.e. Front End Track is HTML, HTTP, CSS, JS, etc. 
 
-## Forever Evolving:
-  ### Intuitive (and pretty!) UI 
-  ### Organization of 'all questions'.
-
-  # Todo
-  ### (v0)
-  - Make AddQuestion a protected route
-  - Dynamically render navbar / card categories
-
-### (v0.1)
-  - Make search better
-    - Fuzzy? 
-    - Handle keywords?

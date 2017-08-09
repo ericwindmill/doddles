@@ -43,11 +43,11 @@ export default {
 
 #footer-symbol:hover {
   cursor: pointer;
-  color: var(--teal);
+  color: var(--indigo-light);
 }
 
 #footer-symbol {
-  color: var(--teal-dark);
+  color: var(--indigo);
 }
   
 </style>

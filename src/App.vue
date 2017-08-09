@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class='ShowSplash'>
     <top-nav></top-nav>
     <router-view></router-view>
     <app-footer></app-footer>
@@ -17,7 +17,12 @@ export default {
   name: 'app',
   components: {
     TopNav,
-    AppFooter
+    AppFooter,
+  },
+  data() {
+    return {
+
+    }
   },
   methods: {
 
@@ -26,7 +31,10 @@ export default {
     ...mapGetters([
       'userLoggedIn',
       'showUser'
-    ])
+    ]),
+    'routeName': function () {
+        return this.$route.name
+      }
   },
   methods: {
     ...mapActions([
@@ -50,10 +58,8 @@ export default {
         this.$router.push('/')
       }
     })
-    // this.requestCompletedQuestions()
   }
 }
-// ${this.showUser.id}
 </script>
 
 <style>
@@ -62,6 +68,6 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
-  padding: 0 calc(var(--spacing-unit));
+  padding: 0 calc(var(--spacing-unit) * 1.5);
 }
 </style>
