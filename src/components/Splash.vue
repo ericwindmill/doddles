@@ -29,7 +29,8 @@ person.printName() // logs 'Abe Lincoln'
 person.printAgain() // throws error
         </code></pre>
         <p>This is a contrived example, but it proves a point. The 'this' keyword refers to the context of the function that calls it, therefor giving us access to the other properties on this object. </p>
-        <h2><code>this</code> gotchas</h2>
+        <br>
+        <h3><code>this</code> gotchas</h3>
         <p>The biggest gotcha in using 'this' is misunderstanding the context when dealing with callbacks. When a callback is executed, it establishes a new context. Therefor, if you try to call 'this' in it, it won't refer to the previous code. The same is true with calling functions from within other functions. Every time a function executes, 'this' changes. There are two ways to handle this issues. The first is by using bind(), call(), or apply(). The second is by using ES6 fat arrow functions, which close over the outer scopes context.</p>
       </div>
     <h2>Plus dozens of other questions asked on phone screens from top tech companies</h2> 

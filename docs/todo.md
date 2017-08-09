@@ -11,15 +11,16 @@
   ### :white_check_mark: Users can see some DATA VIZ.
 
 #### Aside: At this point, I should be able to polish up UI and deploy.
-  * :white_check_mark:Dash Nav
+  * :white_check_mark: Dash Nav
     * Sign Out
     * Questions
     * Submit Question
-  * Splash Page
+  * :white_check_mark: Splash Page
   * :white_check_mark: Footer
+  * Auth Page
   * Submit Questions / Contact Page
   * Tips and Tricks Page
-  * Imrpove Search
+  * Improve Search
 
 ## CMS
   ### Add Questions

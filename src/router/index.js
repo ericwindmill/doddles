@@ -42,12 +42,12 @@ export default new Router({
         {
           path: '/user/:id',
           component: UserDashboard,
-          name: 'user',
+          name: 'user'
         },
         {
           path: '/questions',
           component: QuestionContainer,
-          name: 'questions',
+          name: 'questions'
         }
       ]
     },
