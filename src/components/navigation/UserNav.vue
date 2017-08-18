@@ -2,6 +2,12 @@
     <div class='LeftNav'>
       <ul class='LeftNav--Categories'>
         <li>
+          <router-link class='LeftNav--RouterLink' :to="{name: 'user', params: {id: showUser.id}} ">
+            <icon class='nav-symbol' name="circle-thin"></icon> 
+             Dashboard
+            </router-link>
+        </li>
+        <li>
           <router-link class='LeftNav--RouterLink' to='/questions'>
             <icon class='nav-symbol' name="circle-thin"></icon> 
              Questions
@@ -14,7 +20,7 @@
             </router-link>
         </li>
         <li>
-          <router-link class='LeftNav--RouterLink' to='/questions'>
+          <router-link class='LeftNav--RouterLink' to='/contact'>
             <icon class='nav-symbol' name="circle-thin"></icon> 
              Submit Question
             </router-link>
@@ -35,6 +41,7 @@ export default {
   computed: {
     ...mapGetters([
       'userLoggedIn',
+      'showUser'
     ])
   }
 }
@@ -45,7 +52,6 @@ export default {
   display: flex;
   flex-flow: column;
   width: 80%;
-  height: 80%;
 }
 
 .UserDashboardNav--top {
@@ -58,8 +64,6 @@ export default {
   color: var(--ink);
   box-shadow: none;
   border-radius: 5px;
-  padding: 10px 10px;
-  margin: 10px 10px;
 }
 
 .UserDashboardNav--Button:hover {

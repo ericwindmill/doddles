@@ -6,6 +6,8 @@ import Auth from '@/components/users/Auth'
 import Home from '@/components/Home'
 import QuestionContainer from '@/components/questions/Questions'
 import UserDashboard from '@/components/users/UserDashboard'
+import Contact from '@/components/general/Contact'
+import AddQuestion from '@/components/cms/AddQuestion'
 Vue.use(Router)
 
 export default new Router({
@@ -28,6 +30,18 @@ export default new Router({
       }
     },
     {
+      path: '/add-question',
+      component: AddQuestion,
+      name: 'add-question',
+      beforeEnter: (to, from, next) => {
+        if (store.state.auth.loggedIn && store.state.auth.user.id === 'DzuUoqhRVAdWSJ3BlYVdnq07mg32') {
+          next()
+        } else {
+          next('/login')
+        }
+      },
+    },
+    {
       path: '/home',
       component: Home,
       name: 'home',
@@ -48,6 +62,11 @@ export default new Router({
           path: '/questions',
           component: QuestionContainer,
           name: 'questions'
+        },
+        {
+          path: '/contact',
+          component: Contact,
+          name: 'contact'
         }
       ]
     },

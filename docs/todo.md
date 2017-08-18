@@ -18,7 +18,7 @@
   * :white_check_mark: Splash Page
   * :white_check_mark: Footer
   * :white_check_mark: Auth Page
-  * Submit Questions / Contact Page
+  * :white_check_mark: Submit Questions / Contact Page
   * Tips and Tricks Page
   * Improve Search
 

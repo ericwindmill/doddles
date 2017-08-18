@@ -51,7 +51,7 @@ export default {
         'requestCompanies'
     ]),
     markComplete () {
-      console.log('complete!')
+
     }
   },
   watch: {

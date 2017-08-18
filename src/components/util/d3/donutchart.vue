@@ -15,7 +15,6 @@ export default {
   },
   computed: {
     dataSet: function () {
-      console.log(this.loadedCompleteNum)
       return [
         { name: '', value: this.completeNum},
         { name: '', value: this.totalNum - this.completeNum}

@@ -3,28 +3,24 @@
 -----------*/
 :root {
   /*Font*/
-  --sans: 'Avenir', Helvetica, Arial, sans-serif;
-  
-  --ink: #212B35; 
-  --ink-lightest: #919EAB;
-  --ink-light: #454F5B;
-
-  /*Colors*/
-  /*Brand Color*/
-  --brand: #43467F;
-  --brand-light: #B3B5CB;
-  --brand-dark: #1C2260;
-  --brand-darker: #00044C;
-  --brand-accent: #FFEA8A;
-
-  /*Indigo */
-  --indigo-lighter: #F4F5FA;
-  --indigo-light: #B3BCF5;
-  --indigo: #5C6AC4;
-  --indigo-dark: #202E78;
-  --indigo-darker: #000639;
-  --indigo-text: #3e4155;
-
+--sans: 'Avenir', Helvetica, Arial, sans-serif;
+--ink: #212B35; 
+--ink-lightest: #919EAB;
+--ink-light: #454F5B;
+/*Colors*/
+/*Brand Color*/
+--brand: #43467F;
+--brand-light: #B3B5CB;
+--brand-dark: #1C2260;
+--brand-darker: #00044C;
+--brand-accent: #FFEA8A;
+/*Indigo */
+--indigo-lighter: #F4F5FA;
+--indigo-light: #B3BCF5;
+--indigo: #5C6AC4;
+--indigo-dark: #202E78;
+--indigo-darker: #000639;
+--indigo-text: #3e4155;
   /*Teal  (Helpful Info, Secondary Color, Secondary Graph)*/
 --teal: #47C1BF;
 --teal-lighter: #E0F5F5;
@@ -99,6 +95,10 @@ h2 {
 
 h3 {
   font-size: 24px;
+}
+
+ul {
+  padding: 0;
 }
 
 

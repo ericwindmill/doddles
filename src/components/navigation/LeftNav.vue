@@ -30,7 +30,8 @@
           Web</li>
       </ul>
     </div>
-    <div v-show="routeName === 'user'" class='LeftNav-Dashboard'>
+    <div v-show="routeName === 'user' || routeName === 'contact'" class='LeftNav-Dashboard'>
+      <search></search>
       <user-nav></user-nav>
     </div>
   </div>
@@ -77,9 +78,8 @@ export default {
   margin-top: 50px;
 }
 
-.LeftNav--Categories {
+.LeftNav--Questions {
   height: 100%;
-  padding: 10px;
   color: var(--ink);
 }
 
@@ -88,7 +88,7 @@ export default {
   display: flex;
   align-items: center;
   list-style: none;
-  font-size: 20px;
+  font-size: 1em;
   padding: 10px 0;
   text-decoration: none;
   color: var(--ink);
