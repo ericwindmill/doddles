@@ -35,7 +35,7 @@ export default new Router({
       name: 'Auth',
       beforeEnter: (to, from, next) => {
         if (store.state.auth.loggedIn) {
-          next(`/user/${store.state.auth.user.id}`)
+          this.$router.push(`/user/${store.state.auth.user.id}`)
         } else {
           next()
         }

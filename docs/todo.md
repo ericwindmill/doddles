@@ -20,7 +20,7 @@
   * :white_check_mark: Auth Page
   * :white_check_mark: Submit Questions / Contact Page
   * Tips and Tricks Page
-  * Improve Search
+  * :white_check_mark: Improve Search
 
 ## CMS
   ### Add Questions

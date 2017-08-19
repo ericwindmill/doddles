@@ -52,6 +52,7 @@ export default {
     await auth.onAuthStateChanged(user => {
       if (user) {
         this.LOG_IN(user)
+        this.$router.push(`/user/${user.uid}`)
         this.requestCompletedQuestions(user)
       } else {
         this.$router.push('/')

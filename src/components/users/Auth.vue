@@ -21,6 +21,11 @@ export default {
             'userLoggedIn',
             'showUser'
         ])
+    },
+    beforeUpdate: async function() {
+        if (store.state.auth.loggedIn) {
+            this.$router.push(`/user/${store.state.auth.user.id}`)
+        }
     }
 }
 </script>
