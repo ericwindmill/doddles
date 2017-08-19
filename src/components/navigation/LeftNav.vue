@@ -34,6 +34,7 @@
               || routeName === 'contact'
               || routeName === 'tips'" 
         class='LeftNav-Dashboard'>
+  
       <user-nav></user-nav>
     </div>
   </div>
@@ -116,5 +117,6 @@ export default {
 .LeftNav-Dashboard {
   height: 100%;
 }
+
 </style>
 

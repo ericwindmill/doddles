@@ -7,12 +7,12 @@
              Dashboard
             </router-link>
         </li>
-        <li>
+        <!-- <li>
           <router-link class='LeftNav--RouterLink' to='/questions'>
             <icon class='nav-symbol' name="circle-thin"></icon> 
              Questions
             </router-link>
-        </li>
+        </li> -->
         <li>
           <router-link class='LeftNav--RouterLink' to='/interview-tips'>
             <icon class='nav-symbol' name="circle-thin"></icon> 
@@ -26,6 +26,7 @@
             </router-link>
         </li>
       </ul>
+    <router-link tag='button' class='button' to='/questions' >Questions</router-link>
     <button class='button' v-show='userLoggedIn' @click='logOut'> Sign Out </button>
     </div>
 </template>
