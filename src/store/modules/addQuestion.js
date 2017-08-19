@@ -12,9 +12,14 @@ const mutations = {
 
 const actions = {
   submitQuestion: async ({commit}, questionData) => {
-    await database.ref(`questions`)
-    .push(questionData)
-    commit('ADD_COMPLETE', 'check it')
+    let newQuestion = await database.ref(`questions`).push(questionData)
+    let key = newQuestion.key
+    Object.keys(questionData.tags).forEach(tag => {
+      database.ref(`tags/${tag}/${key}`).set(true)
+    })
+    Object.keys(questionData.companies).forEach(company => {
+      database.ref(`companies/${company}`).set(company)
+    })
   }
 }
 
