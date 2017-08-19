@@ -18,18 +18,6 @@ export default new Router({
       name: 'Splash'
     },
     {
-      path: '/login',
-      component: Auth,
-      name: 'Auth',
-      beforeEnter: (to, from, next) => {
-        if (store.state.auth.loggedIn) {
-          next(`/user/${store.state.auth.user.id}`)
-        } else {
-          next()
-        }
-      }
-    },
-    {
       path: '/add-question',
       component: AddQuestion,
       name: 'add-question',
@@ -42,6 +30,18 @@ export default new Router({
       },
     },
     {
+      path: '/login',
+      component: Auth,
+      name: 'Auth',
+      beforeEnter: (to, from, next) => {
+        if (store.state.auth.loggedIn) {
+          next(`/user/${store.state.auth.user.id}`)
+        } else {
+          next()
+        }
+      }
+    },
+    {
       path: '/home',
       component: Home,
       name: 'home',
@@ -49,7 +49,7 @@ export default new Router({
         if (store.state.auth.loggedIn) {
           next()
         } else {
-          next('/login')
+          next('login')
         }
       },
       children: [

@@ -59,9 +59,6 @@ export default {
       this.list =  oldVal
     }
   },
-  created: async function () {
-
-  },
   components: {
     questionDetail: QuestionDetail
   }

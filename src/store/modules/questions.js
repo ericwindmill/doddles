@@ -46,9 +46,8 @@ const actions = {
       )
   },
   searchTerm: async({commit}, term) => {
-    if (term === '') {
-
-    } else if (term === 'all') {
+    const blanks = ['', 'search term', 'all']
+    if (blanks.includes(term)) {
       await database.ref('questions')
         .on('value', questions => {
           commit('RECEIVE_QUESTIONS', questions.val())

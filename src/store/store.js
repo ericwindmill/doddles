@@ -6,7 +6,7 @@ import { database } from '../firebase'
 import auth from './modules/auth'
 import questions from './modules/questions'
 import user from './modules/user'
-// var questionsRef = database.ref('questions')
+import addQuestion from './modules/addQuestion'
 
 // import * as actions from './actions';
 
@@ -16,8 +16,9 @@ const store = new Vuex.Store({
   modules: {
     auth,
     questions,
-    user
+    user,
+    addQuestion
   }
 })
-
 export default store
+
