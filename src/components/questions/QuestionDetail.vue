@@ -4,13 +4,13 @@
       @click='changeShow(index)'
     >
       <span class='Question--Question'> 
-        <icon v-show="complete" class='QuestionComplete' name='check-circle'></icon>
-        <icon v-show='!complete' class='QuestionIncomplete' name='circle'></icon>
+        <icon v-show="complete" id='QuestionComplete' name='check-circle'></icon>
+        <icon v-show='!complete' id='QuestionIncomplete' name='circle'></icon>
         <h4> {{question.question}}</h4>
       </span>
       <span> 
-        <icon v-show='index !== show' class='open-icon' name="chevron-down"></icon> 
-        <icon v-show='index === show' class='close-icon' name="times"></icon> 
+        <icon v-show='index !== show' id='open-icon' name="chevron-down"></icon> 
+        <icon v-show='index === show' id='close-icon' name="times"></icon> 
       </span>
     </div>
     <div v-show='index === show'>
@@ -96,28 +96,28 @@ export default {
 
 
   /*UTILITY*/
-.open-icon {
+#open-icon {
   width: auto;
   height: 1em;
   color: var(--teal-dark);
 }
 
-.open-icon:hover {
+#open-icon:hover {
   color: var(--teal);
 }
 
-.close-icon {
+#close-icon {
   color: var(--red);
   height: 1em;
 }
 
-.QuestionComplete {
+#QuestionComplete {
   height: 1em;
   padding-right: 10px;
   color: var(--green);
 }
 
-.QuestionIncomplete {
+#QuestionIncomplete {
   height: 1em;
   padding-right: 10px;
   color: var(--red);

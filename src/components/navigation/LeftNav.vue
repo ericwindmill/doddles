@@ -106,7 +106,7 @@ export default {
 .nav-symbol {
   height: 2em;
   padding-right: 10px;
-  color: var(--indigo-dark);
+  color: var(--indigo);
 }
 
 .LeftNav--Categories > li:hover .nav-symbol {

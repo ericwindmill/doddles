@@ -2,7 +2,7 @@
   <div class='Footer'>
     <span class='Footer--Col1'>
       <p>
-        <router-link class='footer-link' to='/questions'>Contact</router-link> | 
+        <router-link class='footer-link' to='/contact'>Contact</router-link> | 
         <a class='footer-link' href='http://ericwindmill.com'> Eric Windmill </a>
       </p>
     </span>

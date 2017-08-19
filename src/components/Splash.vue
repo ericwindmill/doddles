@@ -5,7 +5,7 @@
         <h1>Don't let phone screens be the bottleneck between you and jobs.</h1>
         <p> Simple and detailed answers and explanations to all the most common high-level technical questions asked during technical phone screens.</p>
       </div>
-      <router-link tag='button' class='Splash--Button button' to='/questions'>Start Learning Now</router-link>
+      <router-link tag='button' class='button' id='Splash--Button' to='/questions'>Start Learning Now</router-link>
     </div>
     <section class='Splash--Description'>
       
@@ -78,14 +78,14 @@ export default {
   margin-bottom: 25px;
 }
 
-.Splash--Button {
+#Splash--Button {
   box-shadow: none;
   background: transparent;
   border: 2px solid var(--indigo-lighter);
   color: var(--indigo-lighter);
 }
 
-.Splash--Button:hover {
+#Splash--Button:hover {
   cursor: pointer;
 }
 

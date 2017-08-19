@@ -132,11 +132,6 @@ ul {
 
 /*font-awesome reset*/
 .fa-icon {
-  color: var(--ink);
   width: auto;
   height: 2em; /* or any other relative font sizes */
-}
-
-.fa-icon:hover {
-  color: var(--brand);
 }
