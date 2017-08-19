@@ -14,7 +14,7 @@
             </router-link>
         </li>
         <li>
-          <router-link class='LeftNav--RouterLink' to='/questions'>
+          <router-link class='LeftNav--RouterLink' to='/interview-tips'>
             <icon class='nav-symbol' name="circle-thin"></icon> 
              Phone Interview Tips
             </router-link>

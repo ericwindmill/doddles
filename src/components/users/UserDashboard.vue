@@ -1,6 +1,6 @@
 <template>
   <div class='UserDashboard'>
-    <h2> Howdy, {{showUser.name.split(' ')[0]}} <span style='font-size:3rem'>🤠</span></h2>
+    <h2> Howdy, {{showUser.name.split(' ')[0]}} <span style='font-size:3rem'></span></h2>
     <div class='seperator'></div>
     <h3> Your Progess: </h3>
     <div class='UserDashboard--ProgressCards'>

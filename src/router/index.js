@@ -8,6 +8,7 @@ import QuestionContainer from '@/components/questions/Questions'
 import UserDashboard from '@/components/users/UserDashboard'
 import Contact from '@/components/general/Contact'
 import AddQuestion from '@/components/cms/AddQuestion'
+import Tips from '@/components/general/Tips'
 Vue.use(Router)
 
 export default new Router({
@@ -67,6 +68,11 @@ export default new Router({
           path: '/contact',
           component: Contact,
           name: 'contact'
+        },
+        {
+          path: '/interview-tips',
+          component: Tips,
+          name: 'tips'
         }
       ]
     },

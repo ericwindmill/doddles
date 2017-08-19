@@ -30,8 +30,10 @@
           Web</li>
       </ul>
     </div>
-    <div v-show="routeName === 'user' || routeName === 'contact'" class='LeftNav-Dashboard'>
-      <search></search>
+    <div v-show="routeName === 'user' 
+              || routeName === 'contact'
+              || routeName === 'tips'" 
+        class='LeftNav-Dashboard'>
       <user-nav></user-nav>
     </div>
   </div>

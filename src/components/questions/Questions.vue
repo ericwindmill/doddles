@@ -21,7 +21,9 @@
     <div v-show="list === null" class='search-error'>
       <h4> Sorry, we didn't find any questions for that category.</h4>
       <p> Care to submit one? </p>
-      <button> Submit Question </button>
+      <router-link class='button' to='/contact'>
+        Submit Question
+      </router-link>
     </div>
   </div>
 </template>
@@ -101,6 +103,7 @@ export default {
 
 .search-error > p {
   font-size: 30px;
+  margin-bottom: 30px;
 }
 
 /*Transition*/
