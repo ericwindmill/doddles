@@ -19,7 +19,7 @@
   * :white_check_mark: Footer
   * :white_check_mark: Auth Page
   * :white_check_mark: Submit Questions / Contact Page
-  * Tips and Tricks Page
+  * :white_check_mark: Tips and Tricks Page
   * :white_check_mark: Improve Search
 
 ## CMS
@@ -33,3 +33,6 @@
 ## Tracks
   ### i.e. Front End Track is HTML, HTTP, CSS, JS, etc. 
 
+
+To deploy future builds, just run:
+npm run build to build your project, then firebase deploy to deploy it.
