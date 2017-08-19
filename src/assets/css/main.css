@@ -71,13 +71,16 @@
   /*Spacing*/
   --spacing-unit: 30px;
 }
-
+html {
+  height: 100vh;
+}
 
 /*RESETS*/
 html, body {
   background-color: var(--grey);
   margin: 0;
   padding: 0;
+
 }
 
 h1, h2, h3, h4, p, a {
@@ -113,6 +116,7 @@ ul {
   text-decoration: none;
   padding: 10px 20px;
   box-shadow: 2px 2px 5px var(--grey-dark);
+  cursor: pointer;
 }
 
 .button:hover {

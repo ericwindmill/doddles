@@ -69,6 +69,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   padding: 0 calc(var(--spacing-unit) * 1.5);
-  min-height: 100vh;
 }
 </style>
