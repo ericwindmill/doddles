@@ -7,12 +7,6 @@
              Dashboard
             </router-link>
         </li>
-        <!-- <li>
-          <router-link class='LeftNav--RouterLink' to='/questions'>
-            <icon class='nav-symbol' name="circle-thin"></icon> 
-             Questions
-            </router-link>
-        </li> -->
         <li>
           <router-link class='LeftNav--RouterLink' to='/interview-tips'>
             <icon class='nav-symbol' name="circle-thin"></icon> 
@@ -26,8 +20,8 @@
             </router-link>
         </li>
       </ul>
-    <router-link tag='button' class='button' to='/questions' >Questions</router-link>
-    <button class='button' v-show='userLoggedIn' @click='logOut'> Sign Out </button>
+    <router-link tag='button' class='UserDashboardNav--Button button' to='/questions' >Questions</router-link>
+    <button class='UserDashboardNav--Button button' v-show='userLoggedIn' @click='logOut'> Sign Out </button>
     </div>
 </template>
 
@@ -49,32 +43,8 @@ export default {
 </script>
 
 <style>
-.UserDashboardNav {
-  display: flex;
-  flex-flow: column;
-  width: 80%;
-}
-
-.UserDashboardNav--top {
-  display: flex;
-  flex-flow: column;
-}
-
-.UserDashboardNav--Button { 
-  background-color: transparent;
-  color: var(--ink);
-  box-shadow: none;
-  border-radius: 5px;
-}
-
-.UserDashboardNav--Button:hover {
-  border-radius: 5px;
-  color: var(--indigo);
-}
-
-.UserDashboardNav--Button-active {
-  border-radius: 5px;
-  border-bottom: 3px solid var(--indigo);
-  background-color: var(--indigo-light);
+.UserDashboardNav--Button {
+  margin-bottom: var(--spacing-unit);
+  width: 90%;
 }
 </style>

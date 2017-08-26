@@ -25,6 +25,13 @@
 ## CMS
   ### :white_check_mark: Add Questions
   ### Update Questions
+
+  #### Aside to-dos
+  * the cms needs to be majorly made more useful.
+  * SEO?
+  * Dynamically render the categories? 
+  * Improve search functionality. 
+
   
 ## Quizes
   ### Users can take quizes. 

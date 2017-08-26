@@ -3,7 +3,8 @@ import { database } from '../../firebase'
 const state = {
   questions: [],
   tags: [],
-  companies: []
+  companies: [],
+  searchTerm: 'All'
 }
 
 const mutations = {
@@ -23,6 +24,10 @@ const mutations = {
       companiesArr.push(company)
     })
     state.companies = companiesArr
+  },
+  'CURRENT_SEARCH_TERM' (state, term) {
+    console.log(state.searchTerm)
+    state.searchTerm = term
   }
 }
 
@@ -46,6 +51,7 @@ const actions = {
       )
   },
   searchTerm: async({commit}, term) => {
+    commit('CURRENT_SEARCH_TERM', term)
     const blanks = ['', 'search term', 'all']
     if (blanks.includes(term)) {
       await database.ref('questions')
@@ -81,6 +87,9 @@ const getters = {
   },
   Companies: state => {
     return state.companies
+  },
+  SearchTerm: state => {
+    return state.searchTerm
   }
 }
 

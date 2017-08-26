@@ -30,9 +30,6 @@ export default {
     flex: 1 1;
     max-width: 75%;
     background-color: white;
-    border-radius: 5px;
     box-shadow: -5px 5px 10px var(--grey-dark);
-    padding: 50px 100px;
-
   }
 </style>

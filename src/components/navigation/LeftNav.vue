@@ -81,7 +81,8 @@ export default {
   margin-top: 50px;
 }
 
-.LeftNav--Questions {
+.LeftNav--Questions,
+.LeftNav--Dashboard {
   height: 100%;
   color: var(--ink);
 }

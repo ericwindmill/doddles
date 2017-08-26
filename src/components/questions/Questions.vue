@@ -1,8 +1,7 @@
 <template>
   <div class='QuestionContainer'>
     <div v-show='list' class='QuestionContainer--QuestionList'>
-      <h1>Questions</h1>
-      <p> Questions about 'search term' commonly asked during phone screens.</p>
+      <h1>{{SearchTerm}} Questions</h1>
       <ul id='QuestionUL'>
         <li
           v-for='(question, index) in Questions'
@@ -44,6 +43,7 @@ export default {
   computed: {
     ...mapGetters([
         'Questions',
+        'SearchTerm'
     ]),
   },
   methods: {
@@ -51,10 +51,7 @@ export default {
         'requestQuestions',
         'requestTags',
         'requestCompanies'
-    ]),
-    markComplete () {
-
-    }
+    ])
   },
   watch: {
     'Questions': function(oldVal, newVal) {
@@ -68,17 +65,20 @@ export default {
 </script>
 
 <style>
+.QuestionContainer {
+
+}
 .QuestionContainer h1 {
+  text-align: center;
   line-height: 2;
+  background: var(--indigo-light);
 }
 
 .QuestionContainer--QuestionList > p {
-  line-height: 3;
+  /* line-height: 3; */
 }
 
 .QuestionContainer--QuestionList > ul {
-  border: 3px solid var(--brand-light);
-  border-radius: 5px;
   padding: 0;
 }
 
@@ -114,7 +114,7 @@ export default {
 }
 
 .fade-enter-active, .fade-leave {
-  transition: all .1s;
+  transition: all .3s;
 }
 
 .fade-enter, .fade-leave-to  {

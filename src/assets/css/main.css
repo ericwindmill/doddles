@@ -129,9 +129,3 @@ ul {
   margin: 20px auto;
 }
 
-
-/*font-awesome reset*/
-.fa-icon {
-  width: auto;
-  height: 2em; /* or any other relative font sizes */
-}

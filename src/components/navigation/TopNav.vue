@@ -1,8 +1,9 @@
 <template>
   <div class='TopNav'>
     <router-link class='TopNav--Brand' to='/'> 
-      <h2>Doddl.es</h2>
-      <h4> <em>dod-dle</em>: / dädl / a very easy task. </h4>   
+      
+      <img src='http://res.cloudinary.com/ericwindmill/image/upload/v1503787402/blog_posts/code_nug_wreath.png' alt='Code Nuggets Logo'/>  
+      <h2>Interview Nuggets</h2>
     </router-link>
     <div class='TopNav--Nav'>
       <router-link active-class='TopNav--Button-active' v-show='!userLoggedIn' tag='button' class='TopNav--Button button' to='/login'>Log In</router-link>
@@ -35,6 +36,15 @@ export default {
 .TopNav--Brand {
   color: var(--ink);
   text-decoration: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.TopNav--Brand > img {
+  margin-right: 25px;
+  width: auto;
+  height: 100px;
 }
 
 .TopNav--Button { 

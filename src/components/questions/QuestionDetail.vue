@@ -13,7 +13,7 @@
         <icon v-show='index === show' id='close-icon' name="times"></icon> 
       </span>
     </div>
-    <div v-show='index === show'>
+    <div class='QuestionDetail--Dropdown' v-show='index === show'>
       <div class='QuestionDetail--Answer' v-html='question.answer'></div>
       <div class='seperator'></div>
       <div class='QuestionDetail--Next'>
@@ -92,6 +92,15 @@ export default {
 
   .QuestionDetail--Next > p {
     line-height: 2;
+  }
+
+  .QuestionDetail--Dropdown {
+    /* border  */
+    border-top: var(--brand-light) solid 1px;
+
+    /* Spacing */
+    margin-top: 25px;
+    padding: 10px;
   }
 
 
