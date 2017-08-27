@@ -36,7 +36,6 @@ export default {
   width: 60%;
   height: var(--spacing-unit);
   border: none;
-  border-radius: 5px 0 0 5px;
   border: 1px solid var(--indigo);
   background-color: var(--indigo-light);
   color: var(--ink);
@@ -49,11 +48,10 @@ export default {
 }
 
 .Search--Button {
-  padding: 5px;
+  padding: 10px;
   background-color: var(--indigo);
   color: white;
   border: none;
-  border-radius: 0 5px 5px 0;
 }
 
 .Search--Button:hover {

@@ -110,7 +110,7 @@ ul {
   color: var(--indigo-lighter);
   background-color: var(--indigo);
   border: none;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   font-size: 1rem;
   font-weight: 600;
   text-decoration: none;
