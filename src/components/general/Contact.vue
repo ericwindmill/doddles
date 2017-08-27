@@ -24,5 +24,7 @@ export default {
 </script>
 
 <style>
-  
+.ContactPage {
+  padding: 20px 50px;
+}
 </style>

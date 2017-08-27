@@ -85,6 +85,10 @@ export default {
 
 <style>
 
+.TipsPage {
+  padding: 20px 50px;
+}
+
 .Tips > dt {
   font-size: 1.4em;
   font-weight: 500;

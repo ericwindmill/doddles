@@ -1,8 +1,9 @@
 <template>
   <div class='UserDashboard'>
-    <h2> Howdy, {{showUser.name.split(' ')[0]}} <span style='font-size:3rem'></span></h2>
-    <div class='seperator'></div>
-    <h3> Your Progess: </h3>
+    <header>
+        <h1> Howdy, {{showUser.name.split(' ')[0]}} <span style='font-size:3rem'></span></h1>
+        <h3> Here's Your Progess</h3>
+    </header>
     <div class='UserDashboard--ProgressCards'>
         <div 
             v-for='(tag, index) in Tags'
@@ -59,6 +60,21 @@ export default {
 </script>
 
 <style>
+.UserDashboard > header {
+    background-color: var(--brand-light);
+    text-align: center;
+    line-height: 2;
+}
+
+.UserDashboard > h3 {
+    margin: 10px;
+}
+
+.UserDashboard > button {
+    display: block;
+    margin: auto;
+}
+
   .UserDashboard--ProgressCards {
     margin-top: 25px;
     display:flex;

@@ -9,9 +9,9 @@
 --ink-light: #454F5B;
 /*Colors*/
 /*Brand Color*/
---brand: #43467F;
---brand-light: #B3B5CB;
---brand-dark: #1C2260;
+--brand: cornflowerblue;
+--brand-light: #93ccea;
+--brand-dark: #53aede;
 --brand-darker: #00044C;
 --brand-accent: #FFEA8A;
 /*Indigo */

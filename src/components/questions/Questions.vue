@@ -71,7 +71,7 @@ export default {
 .QuestionContainer h1 {
   text-align: center;
   line-height: 2;
-  background: var(--indigo-light);
+  background: var(--brand-light);
 }
 
 .QuestionContainer--QuestionList > p {

@@ -2,7 +2,7 @@
   <div class='TopNav'>
     <router-link class='TopNav--Brand' to='/'> 
       
-      <img src='http://res.cloudinary.com/ericwindmill/image/upload/v1503787402/blog_posts/code_nug_wreath.png' alt='Code Nuggets Logo'/>  
+      <img src='http://res.cloudinary.com/ericwindmill/image/upload/v1503796969/blog_posts/code_nug_wreath.png' alt='Code Nuggets Logo'/>  
       <h2>Interview Nuggets</h2>
     </router-link>
     <div class='TopNav--Nav'>
@@ -58,7 +58,7 @@ export default {
 
 .TopNav--Button:hover {
   border-radius: 5px;
-  color: var(--indigo);
+  color: var(--brand);
 }
 
 .TopNav--Button-active {
