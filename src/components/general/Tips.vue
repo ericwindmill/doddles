@@ -73,6 +73,14 @@
           It has nothing to do with college or previous jobs, and that's okay.
         </p>
       </dd>
+      <dt>4. When asked a question you do know about, go deep.</dt>
+      <dd>
+        <p> By 'go deep', I mean ramble. Say as much as you can about a topic. Show that your knwledge isn't just surface level, but that you actually understand what's happening. This is a great chance to spend time talking about what you actually know about. If you're giving short (even corrct) answers, you're allowing yourself more room for error. An interview can ask a question a minute if you aren't going deep, or far less if you are.</p><br>
+        <p>Here's an example: 
+          <p><strong> What are some of the features of ES2015? </strong></p></p>
+        <p>One of the biggest features is the ability to write <em>classes</em>. Previously, inheritance in JavaScript was only available via prototypes. Now, you can write classes as you would be able to in many other languages, such as Ruby. [side concept one:] While classes are simply a wrapper for the prototypal inheritance, they do function a bit differently, and allow you to think about your logic differently. (Go into the differences between prototypal inheritance and classical in JS...)  [side concept two:] Classes aren't widely used in JS yet, but they are a core part of modern React. (Go into how classes are used in React...). </p><br>
+        <p> In the above example, you've proven that you know all there is to know about Classes in JS, PLUS shown that you're competent with React, prorotypal inheritance, and general classical inheritance knowledge. If you do that for arrow functions and 2-3 other features of ES6, you've crushed that question and used 5-10 minutes of time. It's a win-win for you and the interviewer.</p>
+      </dd>
     </dl>
   </div>
 </template>
