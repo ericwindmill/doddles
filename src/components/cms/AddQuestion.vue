@@ -1,11 +1,11 @@
 <template>
   <div class='AddQuestion'>
     <p class='AddQuestion--SubmitStatus' 
-        v-show='typeof submitStatus === String'>
+        v-show="typeof submitStatus === 'string'">
         {{submitStatus}}
     </p>
     <ul class='AddQuestion--SubmitStatus' 
-        v-show='typeof submitStatus === Object'
+        v-show="typeof submitStatus === 'object'"
         v-for='(error,index) in submitStatus'
         :key='index'>
       <li> {{error}} </li>
