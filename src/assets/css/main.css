@@ -129,3 +129,8 @@ ul {
   margin: 20px auto;
 }
 
+.html-sample {
+  background-color: lightgray;
+  padding: 5px;
+  display: inline;
+}

@@ -3,8 +3,8 @@
     <p v-show='submitStatus !== false' > Question Added! </p>
     <form>
       <input type='text' placeholder='Add Question:' class='AddQuestion--Input' v-model='question' required/>
-      <input type='text' placeholder='Tags:' class='AddQuestion--Input' v-model='tags'/>
-      <input type='text' placeholder='Company:' class='AddQuestion--Input' v-model='companies'/>
+      <input type='text' placeholder='Tags: (seperated by commas)' class='AddQuestion--Input' v-model='tags'/>
+      <input type='text' placeholder="Company: (One company or 'none')" class='AddQuestion--Input' v-model='companies'/>
       <textarea placeholder='Answer:' class='AddQuestion--TextArea' v-model='answer' required></textarea>
       <input type='text' placeholder='Submitted By:' class='AddQuestion--Input' v-model='user'/>
 

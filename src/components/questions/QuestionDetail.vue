@@ -80,29 +80,32 @@ export default {
 </script>
 
 <style>
-  .QuestionDetail {
-    margin: 20px;
-    padding: 10px;
-  }
+.QuestionDetail {
+  margin: 20px;
+  padding: 10px;
+}
 
-  .QuestionDetail--Next {
-    text-align: center;
-    width: 100%;
-  }
+.QuestionDetail--Next {
+  text-align: center;
+  width: 100%;
+}
 
-  .QuestionDetail--Next > p {
-    line-height: 2;
-  }
+.QuestionDetail--Next > p {
+  line-height: 2;
+}
 
-  .QuestionDetail--Dropdown {
-    /* border  */
-    border-top: var(--brand-light) solid 1px;
+.QuestionDetail--Dropdown {
+  /* border  */
+  border-top: var(--brand-light) solid 1px;
 
-    /* Spacing */
-    margin-top: 25px;
-    padding: 10px;
-  }
+  /* Spacing */
+  margin-top: 25px;
+  padding: 20px;
+}
 
+.QuestionDetail--Answer {
+  padding-top: 25px;
+}
 
   /*UTILITY*/
 #open-icon {
