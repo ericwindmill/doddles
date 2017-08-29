@@ -26,7 +26,7 @@ const mutations = {
     state.companies = companiesArr
   },
   'CURRENT_SEARCH_TERM' (state, term) {
-    console.log(state.searchTerm)
+    
     state.searchTerm = term
   }
 }

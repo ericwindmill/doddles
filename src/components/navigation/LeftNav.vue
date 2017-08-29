@@ -2,32 +2,21 @@
   <div class='LeftNav'>
     <div v-show="routeName === 'questions'" class='LeftNav--Questions'>
       <search></search>
+      
       <ul class='LeftNav--Categories'>
-        <li @click='handleCategory' data-category='all'>
+        <li @click="handleCategory('all')" data-category='all'>
           <icon class='nav-symbol' name="circle-thin"></icon> 
           All
         </li>
-        <li @click='handleCategory' data-category='general'>
-          <icon class='nav-symbol' name="circle-thin"></icon> 
-          General</li>
-        <li @click='handleCategory' data-category='html'>
-          <icon class='nav-symbol' name="circle-thin"></icon> 
-          HTML</li>
-        <li @click='handleCategory' data-category='javascript'>
-          <icon class='nav-symbol' name="circle-thin"></icon> 
-          JavaScript</li>
-        <li @click='handleCategory' data-category='css'>
-          <icon class='nav-symbol' name="circle-thin"></icon> 
-          CSS</li>
-        <li @click='handleCategory' data-category='ruby'>
-          <icon class='nav-symbol' name="circle-thin"></icon> 
-          Ruby</li>
-        <li @click='handleCategory' data-category='rails'>
-          <icon class='nav-symbol' name="circle-thin"></icon> 
-          Rails</li>
-        <li @click='handleCategory' data-category='web'>
-          <icon class='nav-symbol' name="circle-thin"></icon> 
-          Web</li>
+        <li 
+          v-for='(tag, index) in Tags'
+          :key='index'
+          @click='handleCategory(tag)' 
+          data-categry='tag'
+        >
+          <icon class='nav-symbol' name="circle-thin"></icon>
+          {{tag}}
+        </li>
       </ul>
     </div>
     <div v-show="routeName === 'user' 
@@ -48,7 +37,8 @@ export default {
   data() {
     return {
       routeName: '',
-      category: ''
+      category: '',
+      currentTag: ''
     }
   },
   watch: {
@@ -63,10 +53,14 @@ export default {
     ...mapActions([
       'searchTerm'
     ]),
-    handleCategory(e) {
-      this.category = e.target.dataset.category
-      this.searchTerm(this.category)
+    handleCategory(category) {
+      this.searchTerm(category)
     }
+  },
+  computed: {
+    ...mapGetters([
+      'Tags'
+    ])
   },
   components: {
     search: Search,
