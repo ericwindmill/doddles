@@ -1,6 +1,15 @@
 <template>
   <div class='AddQuestion'>
-    <p v-show='submitStatus !== false' > Question Added! </p>
+    <p class='AddQuestion--SubmitStatus' 
+        v-show='typeof submitStatus === String'>
+        {{submitStatus}}
+    </p>
+    <ul class='AddQuestion--SubmitStatus' 
+        v-show='typeof submitStatus === Object'
+        v-for='(error,index) in submitStatus'
+        :key='index'>
+      <li> {{error}} </li>
+    </ul>
     <form>
       <input type='text' placeholder='Add Question:' class='AddQuestion--Input' v-model='question' required/>
       <input type='text' placeholder='Tags: (seperated by commas)' class='AddQuestion--Input' v-model='tags'/>
@@ -38,28 +47,48 @@ export default {
   },
   methods: {
     ...mapActions([
-      'submitQuestion'
+      'submitQuestion',
+      'handleSubmitError'
     ]),
     handleSubmit() {
       let companies = {}
       let tags = {}
-      this.companies.split(',').forEach(company => {
-        company = company.toLowerCase().trim()
-        companies[company] = company
-      })
-      this.tags.split(',').forEach(tag => {
-        tag = tag.toLowerCase().trim()
-        tags[tag] = tag
-      })
-      return this.submitQuestion(
-        {
-          question: this.question,
-          tags: tags,
-          companies: companies,
-          user: this.user,
-          answer: this.answer
-        }
-      )
+      let errors = []
+
+      //these if statements are for error handling.
+      // basically, if hthe user doesn't put in a tag or company, I don't want it to fail silently because of .split
+      if (this.companies) {
+        console.log(this.companies)
+        this.companies.split(',').forEach(company => {
+          company = company.toLowerCase().trim()
+          companies[company] = company
+        })
+      } else {
+        errors.push("there must be a company, or put 'none'")
+      }
+      if (this.tags) {
+        this.tags.split(',').forEach(tag => {
+          tag = tag.toLowerCase().trim()
+          tags[tag] = tag
+        })
+      } else {
+        errors.push('there must be at least one tag!')
+      }
+
+      if (this.companies && this.tags) {
+        return this.submitQuestion(
+          {
+            question: this.question,
+            tags: tags,
+            companies: companies,
+            user: this.user,
+            answer: this.answer
+          }
+        )
+      } else {
+        return this.handleSubmitError(errors)
+      }
+
     }
   },
   computed: {
@@ -74,6 +103,12 @@ export default {
 <style scoped>
 .AddQuestion {
   margin: 0 auto;
+}
+
+.AddQuestion--SubmitStatus {
+  font-size: 2rem;
+  color: var(--red);
+  text-align: center;
 }
 
 form {
@@ -119,4 +154,5 @@ textarea {
   margin: 10px auto;
   font-size: 1em;
 }
+
 </style>

@@ -5,8 +5,13 @@ const state = {
 }
 
 const mutations = {
-  'SUBMIT QUESTION' (state, status) {
-    state.addQuestionStatus = 'Question Added!'
+  'SUBMIT_QUESTION' (state, status) {
+    if (typeof status === String) {
+      state.addQuestionStatus = status
+    } else {
+      //error handling. This is unnessecary right now, but in the future the errors should be handled here, not in the add question componnoet. 
+      state.addQuestionStatus = status
+    }
   }
 }
 
@@ -20,6 +25,12 @@ const actions = {
     Object.keys(questionData.companies).forEach(company => {
       database.ref(`companies/${company}`).set(company)
     })
+    if (newQuestion) {
+      commit('SUBMIT_QUESTION', 'Question Added!')
+    }
+  },
+  handleSubmitError: ({commit}, errors) => {
+    commit('SUBMIT_QUESTION', errors)
   }
 }
 

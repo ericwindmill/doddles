@@ -129,8 +129,30 @@ ul {
   margin: 20px auto;
 }
 
+
+/* Custom Syntax Highlights  */
+/* If you delete this, 'What is HTML question' will need to fixed. */
 .html-sample {
   background-color: lightgray;
   padding: 5px;
   display: inline;
+}
+
+.inline-code {
+  background-color: lightgray;
+  padding: 3px;
+  display: inline;
+}
+
+dl {
+
+}
+
+dt {
+  font-weight: 700;
+  font-size: 1.1em;
+}
+
+dd {
+  margin: 0 0 12px 20px;
 }
