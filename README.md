@@ -1,5 +1,4 @@
-# Interview Doddles
-### *dod-dle*: / dädl / a very easy task. 
+# Interview Nuggets
 
 > Master the technical phone screen.
 
