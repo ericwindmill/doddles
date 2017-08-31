@@ -3,7 +3,7 @@ import Vue from 'vue'
 
 var config = {
   apiKey: "AIzaSyDVFe6Pp1tNy4C3D8VSE3hykoN16nbqWqU",
-  authDomain: "interviewnuggets.com",
+  authDomain: "fone-screener.firebaseapp.com",
   databaseURL: "https://fone-screener.firebaseio.com",
   projectId: "fone-screener",
   storageBucket: "fone-screener.appspot.com",
